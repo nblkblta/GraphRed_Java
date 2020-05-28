@@ -10,7 +10,7 @@ import java.util.List;
 public class PolylineShape extends BaseShape {
 	private List<Point2D> coordinates;
 	private Color shapeColor;
-	private Shape shape;
+	private Shape shape=null;
 	public PolylineShape(){
 		this.coordinates = new ArrayList<Point2D>();
 	}

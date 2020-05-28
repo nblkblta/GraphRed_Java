@@ -2,7 +2,6 @@ package Shapes;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
@@ -12,7 +11,7 @@ import java.util.List;
 public class EllipseShape extends BaseShape {
 	private List<Point2D> coordinates;
 	private Color shapeColor;
-	private Shape shape;
+	private Shape shape=null;
 	public EllipseShape(){
 		this.coordinates = new ArrayList<Point2D>();
 	}

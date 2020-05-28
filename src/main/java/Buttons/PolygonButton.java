@@ -5,8 +5,9 @@ import java.awt.event.ActionListener;
 
 import GraphRed.Query;
 import Shapes.PolygonShape;
-import Shapes.RectShape;
 
+
+@SuppressWarnings("serial")
 public class PolygonButton extends BaseButton {
 	public PolygonButton(int buttonSize,Query query){
 		super("Polygon");

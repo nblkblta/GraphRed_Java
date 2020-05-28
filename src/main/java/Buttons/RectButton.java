@@ -1,12 +1,12 @@
 package Buttons;
 
-import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import GraphRed.Query;
 import Shapes.RectShape;
 
+@SuppressWarnings("serial")
 public class RectButton extends BaseButton {
 	public RectButton(int buttonSize,Query query){
 		super("Rect");

@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 import GraphRed.Query;
 
+@SuppressWarnings("serial")
 public class GreenColorButton extends BaseColorButton {
 	public GreenColorButton(Query query){
 		super("Green");
@@ -13,7 +14,7 @@ public class GreenColorButton extends BaseColorButton {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				query.getLastShape().setColor(Color.green);
+				query.getLast().setColor(Color.green);
 				query.setDefaultColor(Color.green);
 			}
 		});

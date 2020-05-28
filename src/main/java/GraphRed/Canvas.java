@@ -8,20 +8,19 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 import javax.swing.JPanel;
 
-import Shapes.BaseShape;
+
 
 /**
  * @author nblk
  *
  */
+@SuppressWarnings("serial")
 public class Canvas extends JPanel {
 	Canvas me;
 	private int width;
 	private int heigth;
-	private int buttonSize;
 	private Query query;
 	private BufferedImage buf;
 	private Graphics buffer;
@@ -54,13 +53,13 @@ public class Canvas extends JPanel {
 			
 			@Override
 			public void mousePressed(MouseEvent event) {
-				query.getLastShape().addCoordinates(event.getPoint());	
+				query.getLast().addCoordinates(event.getPoint());	
 			}
 			
 
 			@Override
 			public void mouseReleased(MouseEvent event) {
-				query.getLastShape().addCoordinates(event.getPoint());
+				query.getLast().addCoordinates(event.getPoint());
 				paintToBuffer(buffer);
 				repaint();
 			}});
@@ -68,7 +67,7 @@ public class Canvas extends JPanel {
 
 			@Override
 			public void mouseDragged(MouseEvent event) {	
-				query.getLastShape().addCurrCoordinates(event.getPoint());
+				query.getLast().addCurrCoordinates(event.getPoint());
 				paintToBuffer(buffer);
 				repaint();
 			}

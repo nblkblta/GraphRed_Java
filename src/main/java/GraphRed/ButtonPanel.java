@@ -11,6 +11,7 @@ import Buttons.PolygonButton;
 import Buttons.PolylineButton;
 import Buttons.RectButton;
 
+@SuppressWarnings("serial")
 public class ButtonPanel extends JPanel {
 	private int buttonSize = 40;
 	ButtonPanel(Dimension dim,Query query){

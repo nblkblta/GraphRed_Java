@@ -5,8 +5,8 @@ import java.awt.event.ActionListener;
 
 import GraphRed.Query;
 import Shapes.PolylineShape;
-import Shapes.RectShape;
 
+@SuppressWarnings("serial")
 public class PolylineButton extends BaseButton{
 	public PolylineButton(int buttonSize,Query query){
 		super("Polyline");

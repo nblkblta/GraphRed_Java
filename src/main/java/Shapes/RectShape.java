@@ -11,7 +11,7 @@ import java.util.List;
 public class RectShape extends BaseShape {
 	private List<Point2D> coordinates;
 	private Color shapeColor;
-	private Shape shape;
+	private Shape shape=null;
 	public RectShape(){
 		this.coordinates = new ArrayList<Point2D>();
 	}
