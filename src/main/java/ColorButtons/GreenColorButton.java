@@ -6,19 +6,16 @@ import java.awt.event.ActionListener;
 
 import GraphRed.Query;
 
-
-public class RedColorButton extends BaseColorButton {
-	
-	public RedColorButton(Query query){
-		super("Red");
+public class GreenColorButton extends BaseColorButton {
+	public GreenColorButton(Query query){
+		super("Green");
 		this.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				query.getLastShape().setColor(Color.red);
-				query.setDefaultColor(Color.red);
+				query.getLastShape().setColor(Color.green);
+				query.setDefaultColor(Color.green);
 			}
 		});
 	}
-
 }
