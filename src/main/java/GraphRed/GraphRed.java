@@ -9,16 +9,15 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 
 public class GraphRed extends JFrame{
 
-	private int buttonSize = 45;
 	private int windowWidth ;
 	private int windowHeigth ;
-	public void addActionListener(int i) {
-		
-	}
-	private static final long serialVersionUID = 1L;
+	private Query query ;
+	
+	private static final long serialVersionUID = 2L;
 	GraphRed(){
 		super("GraphRedactor");
 		Toolkit kit = Toolkit.getDefaultToolkit();
@@ -28,29 +27,11 @@ public class GraphRed extends JFrame{
 		windowHeigth=screenSize.height;
 		this.setSize(windowWidth, windowHeigth);
 		this.setVisible(true);
-		Canvas jp = new Canvas(windowWidth,windowHeigth,buttonSize);
-		jp.setBounds(buttonSize, 0, windowWidth - buttonSize, windowHeigth);
-		Rectangle rect = new Rectangle(buttonSize,buttonSize);
-		JButton jPen = new JButton("P");
-		JButton jRect = new JButton("R");
-		jRect.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-	           jp.setMode(2);
-	           System.out.println(jp.getMode());
-	        }
-		});
-		jPen.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-	           jp.setMode(1);
-	           System.out.println(jp.getMode());
-	        }
-		});
-		jPen.setBounds(rect);
-		jPen.setLocation(0, 0);	
-		jRect.setBounds(rect);
-		jRect.setLocation(0, buttonSize);	
-		this.add(jRect);
-		this.add(jPen);
+		query = new Query();
+		JPanel buttonPanel = new ButtonPanel(screenSize,query);
+		this.add(buttonPanel);
+		Canvas jp = new Canvas(windowWidth,windowHeigth, query);
+		jp.setBounds(0, 0, windowWidth, windowHeigth);
 		this.add(jp);
 	}
 	public static void main(String[] args) {
