@@ -30,6 +30,8 @@ public class GraphRed extends JFrame{
 		query = new Query();
 		JPanel buttonPanel = new ButtonPanel(screenSize,query);
 		this.add(buttonPanel);
+		JPanel colorButtonPanel = new ColorButtonPanel(screenSize,query);
+		this.add(colorButtonPanel);
 		Canvas jp = new Canvas(windowWidth,windowHeigth, query);
 		jp.setBounds(0, 0, windowWidth, windowHeigth);
 		this.add(jp);

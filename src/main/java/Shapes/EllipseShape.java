@@ -14,13 +14,12 @@ public class EllipseShape extends BaseShape {
 	private Color shapeColor;
 	private Shape shape;
 	public EllipseShape(){
-		this.shapeColor = Color.black;
 		this.coordinates = new ArrayList<Point2D>();
 	}
 	@Override
 	public void drawShape(Graphics g) {
 		g.setColor(shapeColor);
-		g.drawOval(((Rectangle)shape).x,((Rectangle)shape).y, ((Rectangle)shape).width,((Rectangle)shape).height);
+		g.drawOval((int)(((Ellipse2D.Double)shape).x),(int)(((Ellipse2D.Double)shape).y), (int)(((Ellipse2D.Double)shape).width),(int)(((Ellipse2D.Double)shape).height));
 	}
 
 	@Override

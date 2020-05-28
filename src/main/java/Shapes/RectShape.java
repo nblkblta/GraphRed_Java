@@ -13,7 +13,6 @@ public class RectShape extends BaseShape {
 	private Color shapeColor;
 	private Shape shape;
 	public RectShape(){
-		this.shapeColor = Color.black;
 		this.coordinates = new ArrayList<Point2D>();
 	}
 	

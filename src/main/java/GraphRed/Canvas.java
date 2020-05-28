@@ -27,13 +27,13 @@ public class Canvas extends JPanel {
 	private Graphics buffer;
 	public Canvas(int width,int heigth, Query query) {
 		me=this;
-		me.width=width-40;
-		me.heigth=heigth-40;
+		me.width=width;
+		me.heigth=heigth-80;
 		me.query=query;
 		buf=new BufferedImage(me.width,me.width, BufferedImage.TYPE_INT_ARGB);
 		buffer=buf.getGraphics();
 		buffer.setColor(Color.white);
-		buffer.fillRect(0, 40, me.width, me.heigth);
+		buffer.fillRect(0, 80, me.width, me.heigth);
 		
 		me.addMouseListener(new MouseListener() {
 			
@@ -82,7 +82,7 @@ public class Canvas extends JPanel {
 	}
 	public void paintToBuffer(Graphics g) {
 		buffer.setColor(Color.white);
-		buffer.fillRect(0, 40, me.width, me.heigth);
+		buffer.fillRect(0, 80, me.width, me.heigth);
 		query.printTo(g);
 	}
 
