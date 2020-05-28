@@ -39,7 +39,6 @@ public class GraphRed extends JFrame{
 		{
 		GraphRed gr = new GraphRed();
 		gr.setDefaultCloseOperation(EXIT_ON_CLOSE);
-
 		});
 
 	}

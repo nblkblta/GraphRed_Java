@@ -28,6 +28,7 @@ public class Query {
 	}
 	public void printTo(Graphics g) {
 		for (BaseShape shape: listOfShapes) {
+			if(shape.getShape()!=null)
 			shape.drawShape(g);
 		}	
 	}
