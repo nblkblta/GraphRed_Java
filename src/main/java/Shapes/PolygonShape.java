@@ -2,58 +2,55 @@ package Shapes;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Polygon;
+
 import java.awt.Shape;
+
 import java.awt.geom.Point2D;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class PolygonShape extends BaseShape {
-	private List<Point2D> coordinates;
 	private Color shapeColor;
-	private Shape shape=null;
+	private Polygon shape=null;
 	public PolygonShape(){
-		this.coordinates = new ArrayList<Point2D>();
+		this.shape=new Polygon();
 	}
 	@Override
 	public void drawShape(Graphics g) {
-		// TODO Автоматически созданная заглушка метода
+		g.setColor(shapeColor);
+		g.drawPolygon(shape);
 		
 	}
 
 	@Override
 	public Color getColor() {
-		// TODO Автоматически созданная заглушка метода
-		return null;
+		return this.shapeColor;
 	}
 
 	@Override
 	public void setColor(Color color) {
-		// TODO Автоматически созданная заглушка метода
+		this.shapeColor=color;
 		
 	}
 
 	@Override
 	public Shape getShape() {
-		// TODO Автоматически созданная заглушка метода
-		return null;
+		return this.shape;
 	}
 
 	@Override
 	public void setShape(Shape shape) {
-		// TODO Автоматически созданная заглушка метода
-		
+		this.shape=(Polygon) shape;
 	}
 
 	@Override
 	public void addCoordinates(Point2D point) {
-		// TODO Автоматически созданная заглушка метода
-		
+		shape.addPoint((int)point.getX(), (int)point.getY());
 	}
 
 	@Override
 	public void addCurrCoordinates(Point2D point) {
-		// TODO Автоматически созданная заглушка метода
 		
-	}
+	}	
 
 }

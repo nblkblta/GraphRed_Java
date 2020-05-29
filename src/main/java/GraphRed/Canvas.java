@@ -54,6 +54,8 @@ public class Canvas extends JPanel {
 			@Override
 			public void mousePressed(MouseEvent event) {
 				query.getLast().addCoordinates(event.getPoint());	
+				paintToBuffer(buffer);
+				repaint();
 			}
 			
 

@@ -4,22 +4,20 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Shape;
 import java.awt.geom.Point2D;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class PolylineShape extends BaseShape {
-	private List<Point2D> coordinates;
 	private Color shapeColor;
-	private Shape shape=null;
+	private Polyline shape=null;
 	public PolylineShape(){
-		this.coordinates = new ArrayList<Point2D>();
+		this.shape = new Polyline();
 	}
 	@Override
 	public void drawShape(Graphics g) {
-		// TODO Автоматически созданная заглушка метода
-		
+		g.setColor(shapeColor);
+		g.drawPolyline(shape.getX(),shape.getY(),shape.size());
 	}
-
+	
 	@Override
 	public Color getColor() {
 		// TODO Автоматически созданная заглушка метода
@@ -28,32 +26,27 @@ public class PolylineShape extends BaseShape {
 
 	@Override
 	public void setColor(Color color) {
-		// TODO Автоматически созданная заглушка метода
-		
+		this.shapeColor=color;
 	}
 
 	@Override
 	public Shape getShape() {
-		// TODO Автоматически созданная заглушка метода
-		return null;
+		return this.shape;
 	}
 
 	@Override
 	public void setShape(Shape shape) {
-		// TODO Автоматически созданная заглушка метода
-		
+		this.shape=(Polyline) shape;
 	}
 
 	@Override
 	public void addCoordinates(Point2D point) {
-		// TODO Автоматически созданная заглушка метода
-		
+		this.shape.addCoordinates(point);
 	}
 
 	@Override
 	public void addCurrCoordinates(Point2D point) {
-		// TODO Автоматически созданная заглушка метода
-		
+		this.shape.addCurrCoordinates(point);
 	}
-
+	
 }
