@@ -15,7 +15,7 @@ public class GreenColorButton extends BaseColorButton {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				query.getLast().setColor(Color.green);
-				query.setDefaultColor(Color.green);
+				query.setCurrColor(Color.green);
 			}
 		});
 	}

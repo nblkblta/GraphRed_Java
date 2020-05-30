@@ -11,17 +11,15 @@ import Shapes.BaseShape;
 public class Query {
 
 	private List<BaseShape> listOfShapes;
-	private Color defaultColor;
+	private Color CurrColor;
 	Query(){
 		listOfShapes = new ArrayList<BaseShape>();
-		defaultColor=Color.black;
+		CurrColor=Color.black;
 	}
 	
 	public void addShape(BaseShape shape) {
-		
 		listOfShapes.add(shape);
-		
-		this.getLast().setColor(defaultColor);
+		this.getLast().setColor(CurrColor);
 	}
 	public void printTo(Graphics g) {
 		for (BaseShape shape: listOfShapes) {
@@ -32,7 +30,7 @@ public class Query {
 	public BaseShape getLast() {
 		return listOfShapes.get(listOfShapes.size()-1);
 	}
-	public void setDefaultColor(Color color) {
-		this.defaultColor=color;
+	public void setCurrColor(Color color) {
+		this.CurrColor=color;
 	}
 }

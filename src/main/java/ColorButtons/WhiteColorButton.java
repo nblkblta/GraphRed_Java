@@ -15,7 +15,7 @@ public class WhiteColorButton extends BaseColorButton {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				query.getLast().setColor(Color.white);
-				query.setDefaultColor(Color.white);
+				query.setCurrColor(Color.white);
 			}
 		});
 	}
