@@ -10,7 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class GraphRed extends JFrame{
-
+	// комментарий для проверки
 	private int windowWidth ;
 	private int windowHeigth ;
 	private Query query ;
