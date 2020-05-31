@@ -33,6 +33,7 @@ public class ColorButtonPanel extends JPanel{
 	private int buttonSize = 40;
 	ColorButtonPanel(Dimension dim,Query query){
 		super();
+		//
 		this.setBounds(0, buttonSize, dim.width, buttonSize);
 		this.setBackground(Color.black);
 		

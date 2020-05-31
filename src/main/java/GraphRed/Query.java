@@ -12,9 +12,11 @@ public class Query {
 
 	private List<BaseShape> listOfShapes;
 	private Color CurrColor;
+	
 	Query(){
 		listOfShapes = new ArrayList<BaseShape>();
 		CurrColor=Color.black;
+		
 	}
 	
 	public void addShape(BaseShape shape) {
