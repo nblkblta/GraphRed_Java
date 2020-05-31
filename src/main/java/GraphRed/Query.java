@@ -33,4 +33,7 @@ public class Query {
 	public void setCurrColor(Color color) {
 		this.CurrColor=color;
 	}
+	public void refresh() {
+		this.listOfShapes.clear();
+	}
 }
