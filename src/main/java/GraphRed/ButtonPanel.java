@@ -7,6 +7,7 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 
 import Buttons.EllipseButton;
+import Buttons.PencilButton;
 import Buttons.PolygonButton;
 import Buttons.PolylineButton;
 import Buttons.RectButton;
@@ -22,5 +23,6 @@ public class ButtonPanel extends JPanel {
 		this.add(BorderLayout.SOUTH,new PolylineButton(buttonSize,query));
 		this.add(BorderLayout.SOUTH,new PolygonButton(buttonSize,query));
 		this.add(BorderLayout.SOUTH,new EllipseButton(buttonSize,query));
+		this.add(BorderLayout.SOUTH,new PencilButton(buttonSize,query));
 	}
 }

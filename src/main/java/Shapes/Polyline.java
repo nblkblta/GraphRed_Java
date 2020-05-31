@@ -15,7 +15,6 @@ public class Polyline implements Shape{
 	
 	Polyline(){
 		this.coordinates = new ArrayList<Point2D>();
-		this.coordinates.add(new Point2D.Double());
 	}
 	public int[] getX() {
 		int[] m = new int [this.coordinates.size()];
@@ -44,6 +43,9 @@ public class Polyline implements Shape{
 	}
 
 	public void addCurrCoordinates(Point2D point) {
+		if(this.coordinates.size()<2) {
+			this.coordinates.add(point);
+		}
 		this.coordinates.set(0, point);
 	}
 	

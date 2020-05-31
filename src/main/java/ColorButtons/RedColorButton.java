@@ -11,7 +11,7 @@ import GraphRed.Query;
 public class RedColorButton extends BaseColorButton {
 	
 	public RedColorButton(Query query){
-		super("Red");
+		super();
 		this.addActionListener(new ActionListener() {
 
 			@Override
@@ -20,6 +20,11 @@ public class RedColorButton extends BaseColorButton {
 				query.setCurrColor(Color.red);
 			}
 		});
+	}
+
+	@Override
+	public Color getColor() {
+		return Color.red;
 	}
 
 }

@@ -9,7 +9,7 @@ import GraphRed.Query;
 @SuppressWarnings("serial")
 public class WhiteColorButton extends BaseColorButton {
 	public WhiteColorButton(Query query){
-		super("White");
+		super();
 		this.addActionListener(new ActionListener() {
 
 			@Override
@@ -18,6 +18,11 @@ public class WhiteColorButton extends BaseColorButton {
 				query.setCurrColor(Color.white);
 			}
 		});
+	}
+
+	@Override
+	public Color getColor() {
+		return Color.white;
 	}
 
 }
