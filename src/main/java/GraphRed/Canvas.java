@@ -23,7 +23,7 @@ public class Canvas extends JPanel {
 	private int heigth;
 	private Query query;
 	private BufferedImage buf;
-	private Graphics buffer;
+	public Graphics buffer;
 	public Canvas(int width,int heigth, Query query,int buttonSize) {
 		me=this;
 		me.width=width;

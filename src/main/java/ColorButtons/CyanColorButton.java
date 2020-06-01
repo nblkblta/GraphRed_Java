@@ -11,11 +11,14 @@ public class CyanColorButton extends BaseColorButton{
 
 	public CyanColorButton(Query query){
 		super();
+		this.setBackground(Color.cyan);
 		this.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				query.getLast().setColor(Color.cyan);
+				if (query.getSize()>0) {
+					query.getLast().setColor(Color.cyan);
+				}
 				query.setCurrColor(Color.cyan);
 			}
 		});

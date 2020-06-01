@@ -11,11 +11,14 @@ public class GrayColorButton extends BaseColorButton{
 	
 	public GrayColorButton(Query query){
 		super();
+		this.setBackground(Color.gray);
 		this.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				query.getLast().setColor(Color.gray);
+				if (query.getSize()>0) {
+					query.getLast().setColor(Color.gray);
+				}
 				query.setCurrColor(Color.gray);
 			}
 		});

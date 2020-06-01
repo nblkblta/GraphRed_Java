@@ -27,12 +27,12 @@ public class GraphRed extends JFrame{
 		this.setSize(windowWidth, windowHeigth);
 		this.setVisible(true);
 		query = new Query();
-		JPanel buttonPanel = new ButtonPanel(screenSize,query,buttonSize);
+		Canvas jp = new Canvas(windowWidth,windowHeigth, query,buttonSize);
+		jp.setBounds(0, 80, windowWidth, windowHeigth);
+		JPanel buttonPanel = new ButtonPanel(screenSize,query,buttonSize,jp);
 		this.add(buttonPanel);
 		JPanel colorButtonPanel = new ColorButtonPanel(screenSize,query, buttonSize);
 		this.add(colorButtonPanel);
-		Canvas jp = new Canvas(windowWidth,windowHeigth, query,buttonSize);
-		jp.setBounds(0, 80, windowWidth, windowHeigth);
 		this.add(jp);
 	}
 	public static void main(String[] args) {

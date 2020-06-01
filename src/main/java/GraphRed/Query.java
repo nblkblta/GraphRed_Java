@@ -38,4 +38,7 @@ public class Query {
 	public void refresh() {
 		this.listOfShapes.clear();
 	}
+	public int getSize() {
+		return this.listOfShapes.size();
+	}
 }

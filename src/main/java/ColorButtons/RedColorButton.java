@@ -12,11 +12,14 @@ public class RedColorButton extends BaseColorButton {
 	
 	public RedColorButton(Query query){
 		super();
+		this.setBackground(Color.red);
 		this.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				query.getLast().setColor(Color.red);
+				if (query.getSize()>0) {
+					query.getLast().setColor(Color.red);
+				}
 				query.setCurrColor(Color.red);
 			}
 		});

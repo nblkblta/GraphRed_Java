@@ -11,11 +11,14 @@ public class PinkColorButton extends BaseColorButton{
 	
 	public PinkColorButton(Query query){
 		super();
+		this.setBackground(Color.pink);
 		this.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				query.getLast().setColor(Color.pink);
+				if (query.getSize()>0) {
+					query.getLast().setColor(Color.pink);
+				}
 				query.setCurrColor(Color.pink);
 			}
 		});

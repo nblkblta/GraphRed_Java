@@ -9,23 +9,26 @@ import GraphRed.Query;
 @SuppressWarnings("serial")
 public class BrownColorButton extends BaseColorButton{
 	
-	Color c = new Color(139, 69, 19);
+	Color color = new Color(139, 69, 19);
 	
 	public BrownColorButton(Query query){
 		super();
+		this.setBackground(color);
 		this.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				query.getLast().setColor(c);
-				query.setCurrColor(c);
+				if (query.getSize()>0) {
+					query.getLast().setColor(color);
+				}
+				query.setCurrColor(color);
 			}
 		});
 	}
 
 	@Override
 	public Color getColor() {
-		return c;
+		return color;
 	}
 
 }

@@ -18,7 +18,9 @@ public class VioletColorButton extends BaseColorButton{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				query.getLast().setColor(color);
+				if (query.getSize()>0) {
+					query.getLast().setColor(color);
+				}
 				query.setCurrColor(color);
 			}
 		});

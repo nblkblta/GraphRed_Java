@@ -10,11 +10,14 @@ import GraphRed.Query;
 public class YellowColorButton extends BaseColorButton {
 	public YellowColorButton(Query query){
 		super();
+		this.setBackground(Color.yellow);
 		this.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				query.getLast().setColor(Color.yellow);
+				if (query.getSize()>0) {
+					query.getLast().setColor(Color.yellow);
+				}
 				query.setCurrColor(Color.yellow);
 			}
 		});

@@ -7,7 +7,6 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 
 import ColorButtons.AppleColorButton;
-import ColorButtons.BaseColorButton;
 import ColorButtons.BlackColorButton;
 import ColorButtons.BlueColorButton;
 import ColorButtons.BrownColorButton;
@@ -38,82 +37,25 @@ public class ColorButtonPanel extends JPanel{
 		this.setBackground(Color.black);
 		
 		this.add(BorderLayout.WEST,new VioletColorButton(query));
-		
-		BaseColorButton buttonPurp = new PurpleColorButton(query);
-		buttonPurp.setBackground(buttonPurp.getColor());
-		this.add(BorderLayout.WEST,buttonPurp);
-		
-		BaseColorButton buttonPink = new PinkColorButton(query);
-		buttonPink.setBackground(buttonPink.getColor());
-		this.add(BorderLayout.WEST,buttonPink);
-		
-		BaseColorButton buttonMag = new MagentaColorButton(query);
-		buttonMag.setBackground(buttonMag.getColor());
-		this.add(BorderLayout.WEST,buttonMag);
-		
-		BaseColorButton buttonRed = new RedColorButton(query);
-		buttonRed.setBackground(buttonRed.getColor());
-		this.add(BorderLayout.WEST,buttonRed);
-		
-		BaseColorButton buttonBrown = new BrownColorButton(query);
-		buttonBrown.setBackground(buttonBrown.getColor());
-		this.add(BorderLayout.WEST,buttonBrown);
-		
-		BaseColorButton buttonOred = new OrangeredColorButton(query);
-		buttonOred.setBackground(buttonOred.getColor());
-		this.add(BorderLayout.WEST,buttonOred);
-		
-		BaseColorButton buttonOr = new OrangeColorButton(query);
-		buttonOr.setBackground(buttonOr.getColor());
-		this.add(BorderLayout.WEST,buttonOr);
-		
-		BaseColorButton buttonYell = new YellowColorButton(query);
-		buttonYell.setBackground(buttonYell.getColor());
-		this.add(BorderLayout.WEST,buttonYell);
-		
-		BaseColorButton buttonApp = new AppleColorButton(query);
-		buttonApp.setBackground(buttonApp.getColor());
-		this.add(BorderLayout.WEST,buttonApp);
-		
-		BaseColorButton buttonGreen = new GreenColorButton(query);
-		buttonGreen.setBackground(buttonGreen.getColor());
-		this.add(BorderLayout.WEST,buttonGreen);
-		
-		BaseColorButton buttonDG = new DarkgreenColorButton(query);
-		buttonDG.setBackground(buttonDG.getColor());
-		this.add(BorderLayout.WEST,buttonDG);
-		
-		BaseColorButton buttonSea = new SeaColorButton(query);
-		buttonSea.setBackground(buttonSea.getColor());
-		this.add(BorderLayout.WEST,buttonSea);
-		
-		BaseColorButton buttonCyan = new CyanColorButton(query);
-		buttonCyan.setBackground(buttonCyan.getColor());
-		this.add(BorderLayout.WEST,buttonCyan);
-		
-		BaseColorButton buttonSky = new SkyColorButton(query);
-		buttonSky.setBackground(buttonSky.getColor());
-		this.add(BorderLayout.WEST,buttonSky);
-		
-		BaseColorButton buttonSteel = new SteelColorButton(query);
-		buttonSteel.setBackground(buttonSteel.getColor());
-		this.add(BorderLayout.WEST,buttonSteel);
-		
-		BaseColorButton buttonBlue = new BlueColorButton(query);
-		buttonBlue.setBackground(buttonBlue.getColor());
-		this.add(BorderLayout.WEST,buttonBlue);
-		
-		BaseColorButton buttonBlack = new BlackColorButton(query);
-		buttonBlack.setBackground(buttonBlack.getColor());
-		this.add(BorderLayout.WEST,buttonBlack);
-		
-		BaseColorButton buttonGray = new GrayColorButton(query);
-		buttonGray.setBackground(buttonGray.getColor());
-		this.add(BorderLayout.WEST,buttonGray);
-		
-		BaseColorButton buttonWhite = new WhiteColorButton(query);
-		buttonWhite.setBackground(buttonWhite.getColor());
-		this.add(BorderLayout.WEST,buttonWhite);
+		this.add(BorderLayout.WEST,new PurpleColorButton(query));
+		this.add(BorderLayout.WEST,new PinkColorButton(query));
+		this.add(BorderLayout.WEST,new MagentaColorButton(query));
+		this.add(BorderLayout.WEST,new RedColorButton(query));
+		this.add(BorderLayout.WEST,new BrownColorButton(query));
+		this.add(BorderLayout.WEST,new OrangeredColorButton(query));
+		this.add(BorderLayout.WEST,new OrangeColorButton(query));
+		this.add(BorderLayout.WEST,new YellowColorButton(query));
+		this.add(BorderLayout.WEST,new AppleColorButton(query));
+		this.add(BorderLayout.WEST,new GreenColorButton(query));
+		this.add(BorderLayout.WEST,new DarkgreenColorButton(query));
+		this.add(BorderLayout.WEST,new SeaColorButton(query));
+		this.add(BorderLayout.WEST,new CyanColorButton(query));
+		this.add(BorderLayout.WEST,new SkyColorButton(query));
+		this.add(BorderLayout.WEST,new SteelColorButton(query));
+		this.add(BorderLayout.WEST,new BlueColorButton(query));
+		this.add(BorderLayout.WEST,new BlackColorButton(query));
+		this.add(BorderLayout.WEST,new GrayColorButton(query));
+		this.add(BorderLayout.WEST,new WhiteColorButton(query));
 	}
 }
 

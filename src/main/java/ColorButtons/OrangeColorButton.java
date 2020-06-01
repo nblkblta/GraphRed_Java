@@ -11,11 +11,14 @@ public class OrangeColorButton extends BaseColorButton{
 	
 	public OrangeColorButton(Query query){
 		super();
+		this.setBackground(Color.orange);
 		this.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				query.getLast().setColor(Color.orange);
+				if (query.getSize()>0) {
+					query.getLast().setColor(Color.orange);
+				}
 				query.setCurrColor(Color.orange);
 			}
 		});
