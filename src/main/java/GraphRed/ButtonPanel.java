@@ -16,15 +16,17 @@ import Buttons.RefreshButton;
 @SuppressWarnings("serial")
 public class ButtonPanel extends JPanel {
 	private int buttonSize = 40;
-	ButtonPanel(Dimension dim,Query query){
+	ButtonPanel(Dimension dim,Query query, int buttonSize){
 		super();
+		this.buttonSize = buttonSize;
 		this.setBounds(0, 0, dim.width, 40);
 		this.setBackground(Color.black);
-		this.add(BorderLayout.WEST,new RectButton(buttonSize,query));
+		this.add(BorderLayout.SOUTH,new RectButton(buttonSize,query));
 		this.add(BorderLayout.SOUTH,new EllipseButton(buttonSize,query));
 		this.add(BorderLayout.SOUTH,new PolylineButton(buttonSize,query));
 		this.add(BorderLayout.SOUTH,new PolygonButton(buttonSize,query));
 		this.add(BorderLayout.SOUTH,new PencilButton(buttonSize,query));
 		this.add(BorderLayout.SOUTH,new RefreshButton(buttonSize,query));
 	}
+	
 }

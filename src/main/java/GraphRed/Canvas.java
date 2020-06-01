@@ -24,15 +24,15 @@ public class Canvas extends JPanel {
 	private Query query;
 	private BufferedImage buf;
 	private Graphics buffer;
-	public Canvas(int width,int heigth, Query query) {
+	public Canvas(int width,int heigth, Query query,int buttonSize) {
 		me=this;
 		me.width=width;
-		me.heigth=heigth-80;
+		me.heigth=heigth-2*buttonSize;
 		me.query=query;
 		buf=new BufferedImage(me.width,me.heigth, BufferedImage.TYPE_INT_ARGB);
 		buffer=buf.getGraphics();
 		buffer.setColor(Color.white);
-		buffer.fillRect(0, 0, me.width, me.heigth);
+		buffer.fillRect(0, 80, me.width, me.heigth);
 		
 		me.addMouseListener(new MouseListener() {
 			
@@ -53,25 +53,31 @@ public class Canvas extends JPanel {
 			
 			@Override
 			public void mousePressed(MouseEvent event) {
+				if (event.getY()>80) {
 				query.getLast().addCoordinates(event.getPoint());	
 				paintToBuffer(buffer);
 				repaint();
+				}
 			}
 			
 
 			@Override
 			public void mouseReleased(MouseEvent event) {
+				if (event.getY()>80) {
 				query.getLast().addCoordinates(event.getPoint());
 				paintToBuffer(buffer);
 				repaint();
+				}
 			}});
 		this.addMouseMotionListener(new MouseMotionListener() {
 
 			@Override
 			public void mouseDragged(MouseEvent event) {	
+				if (event.getY()>80) {
 				query.getLast().addCurrCoordinates(event.getPoint());
 				paintToBuffer(buffer);
 				repaint();
+				}
 			}
 
 			@Override
@@ -83,12 +89,12 @@ public class Canvas extends JPanel {
 	}
 	public void paintToBuffer(Graphics g) {
 		buffer.setColor(Color.white);
-		buffer.fillRect(0, 0, me.width, me.heigth);
+		buffer.fillRect(0, 80, me.width, me.heigth);
 		query.printTo(g);
 	}
 
 	public void paint(Graphics g) {
-		g.drawImage(buf,0,80,me);
+		g.drawImage(buf,0,0,me);
 	}
 
 }

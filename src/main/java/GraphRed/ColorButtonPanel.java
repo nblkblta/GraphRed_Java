@@ -31,15 +31,13 @@ import ColorButtons.YellowColorButton;
 @SuppressWarnings("serial")
 public class ColorButtonPanel extends JPanel{
 	private int buttonSize = 40;
-	ColorButtonPanel(Dimension dim,Query query){
+	ColorButtonPanel(Dimension dim,Query query, int buttonSize){
 		super();
-		//
+		this.buttonSize = buttonSize;
 		this.setBounds(0, buttonSize, dim.width, buttonSize);
 		this.setBackground(Color.black);
 		
-		BaseColorButton buttonVi = new VioletColorButton(query);
-		buttonVi.setBackground(buttonVi.getColor());
-		this.add(BorderLayout.WEST,buttonVi);
+		this.add(BorderLayout.WEST,new VioletColorButton(query));
 		
 		BaseColorButton buttonPurp = new PurpleColorButton(query);
 		buttonPurp.setBackground(buttonPurp.getColor());

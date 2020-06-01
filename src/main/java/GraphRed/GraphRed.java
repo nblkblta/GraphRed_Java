@@ -13,6 +13,7 @@ public class GraphRed extends JFrame{
 
 	private int windowWidth ;
 	private int windowHeigth ;
+	private int buttonSize = 40;
 	private Query query ;
 	
 	private static final long serialVersionUID = 2L;
@@ -26,12 +27,12 @@ public class GraphRed extends JFrame{
 		this.setSize(windowWidth, windowHeigth);
 		this.setVisible(true);
 		query = new Query();
-		JPanel buttonPanel = new ButtonPanel(screenSize,query);
+		JPanel buttonPanel = new ButtonPanel(screenSize,query,buttonSize);
 		this.add(buttonPanel);
-		JPanel colorButtonPanel = new ColorButtonPanel(screenSize,query);
+		JPanel colorButtonPanel = new ColorButtonPanel(screenSize,query, buttonSize);
 		this.add(colorButtonPanel);
-		Canvas jp = new Canvas(windowWidth,windowHeigth-80, query);
-		jp.setBounds(0, 0, windowWidth, windowHeigth);
+		Canvas jp = new Canvas(windowWidth,windowHeigth, query,buttonSize);
+		jp.setBounds(0, 80, windowWidth, windowHeigth);
 		this.add(jp);
 	}
 	public static void main(String[] args) {

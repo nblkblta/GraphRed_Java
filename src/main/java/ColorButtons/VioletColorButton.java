@@ -9,23 +9,24 @@ import GraphRed.Query;
 @SuppressWarnings("serial")
 public class VioletColorButton extends BaseColorButton{
 	
-	Color c = new Color(75, 0, 130);
+	Color color = new Color(75, 0, 130);
 	
 	public VioletColorButton(Query query){
 		super();
+		this.setBackground(color);
 		this.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				query.getLast().setColor(c);
-				query.setCurrColor(c);
+				query.getLast().setColor(color);
+				query.setCurrColor(color);
 			}
 		});
 	}
 
 	@Override
 	public Color getColor() {
-		return c;
+		return color;
 	}
 
 }
