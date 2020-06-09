@@ -29,6 +29,7 @@ public class Canvas extends JPanel {
 		me.width=width;
 		me.heigth=heigth-2*buttonSize;
 		me.query=query;
+		me.setBounds(0, buttonSize*2, width, heigth);
 		buf=new BufferedImage(me.width,me.heigth, BufferedImage.TYPE_INT_ARGB);
 		buffer=buf.getGraphics();
 		buffer.setColor(Color.white);

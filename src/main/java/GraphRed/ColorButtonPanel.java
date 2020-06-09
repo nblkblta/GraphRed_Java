@@ -29,10 +29,10 @@ import ColorButtons.YellowColorButton;
 
 @SuppressWarnings("serial")
 public class ColorButtonPanel extends JPanel{
-	private int buttonSize = 40;
+	//private int buttonSize = 40;
 	ColorButtonPanel(Dimension dim,Query query, int buttonSize){
 		super();
-		this.buttonSize = buttonSize;
+		//this.buttonSize = buttonSize;
 		this.setBounds(0, buttonSize, dim.width, buttonSize);
 		this.setBackground(Color.black);
 		
