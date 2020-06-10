@@ -16,7 +16,7 @@ public class OrangeColorButton extends BaseColorButton{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				if (query.getSize()>0) {
+				if (query.getLast()!=null) {
 					query.getLast().setColor(Color.orange);
 				}
 				query.setCurrColor(Color.orange);

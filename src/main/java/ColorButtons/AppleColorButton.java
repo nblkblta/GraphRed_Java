@@ -18,7 +18,7 @@ public class AppleColorButton extends BaseColorButton{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				if (query.getSize()>0) {
+				if (query.getLast()!=null) {
 					query.getLast().setColor(color);
 				}
 				query.setCurrColor(color);

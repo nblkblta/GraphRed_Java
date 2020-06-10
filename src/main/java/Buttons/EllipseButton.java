@@ -2,7 +2,6 @@ package Buttons;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import GraphRed.Query;
 import Shapes.EllipseShape;
 
@@ -16,6 +15,7 @@ public class EllipseButton extends BaseButton {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				query.addShape(new EllipseShape());
+				
 			}
 		});
 		

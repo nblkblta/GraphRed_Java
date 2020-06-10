@@ -2,8 +2,6 @@ package GraphRed;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-
 import javax.swing.JPanel;
 
 import ColorButtons.AppleColorButton;
@@ -29,11 +27,11 @@ import ColorButtons.YellowColorButton;
 
 @SuppressWarnings("serial")
 public class ColorButtonPanel extends JPanel{
-	//private int buttonSize = 40;
-	ColorButtonPanel(Dimension dim,Query query, int buttonSize){
+	ColorButtonPanel(Query query, Settings settings){
 		super();
-		//this.buttonSize = buttonSize;
-		this.setBounds(0, buttonSize, dim.width, buttonSize);
+		int buttonSize = settings.getButtonSize();
+		int width = settings.getDimension().width;
+		this.setBounds(0, buttonSize, width, buttonSize);
 		this.setBackground(Color.black);
 		
 		this.add(BorderLayout.WEST,new VioletColorButton(query));

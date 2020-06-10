@@ -16,7 +16,7 @@ public class PinkColorButton extends BaseColorButton{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				if (query.getSize()>0) {
+				if (query.getLast()!=null) {
 					query.getLast().setColor(Color.pink);
 				}
 				query.setCurrColor(Color.pink);

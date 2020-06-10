@@ -7,7 +7,7 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.awt.image.BufferedImage;
+
 import javax.swing.JPanel;
 
 
@@ -18,24 +18,18 @@ import javax.swing.JPanel;
  */
 @SuppressWarnings("serial")
 public class Canvas extends JPanel {
-	Canvas me;
-	private int width;
-	private int heigth;
 	private Query query;
-	private BufferedImage buf;
-	public Graphics buffer;
-	public Canvas(int width,int heigth, Query query,int buttonSize) {
+	private Canvas me;
+	
+	public Canvas(Query query, Settings settings) {
 		me=this;
-		me.width=width;
-		me.heigth=heigth-2*buttonSize;
-		me.query=query;
-		me.setBounds(0, buttonSize*2, width, heigth);
-		buf=new BufferedImage(me.width,me.heigth, BufferedImage.TYPE_INT_ARGB);
-		buffer=buf.getGraphics();
-		buffer.setColor(Color.white);
-		buffer.fillRect(0, 80, me.width, me.heigth);
-		
-		me.addMouseListener(new MouseListener() {
+		int width = settings.getDimension().width;
+		int heigth = settings.getDimension().height;
+		int buttonSize = settings.getButtonSize();
+		this.query=query;
+		this.setBounds(0, 2*buttonSize, width, heigth);
+		this.repaint();
+		this.addMouseListener(new MouseListener() {
 			
 			@Override
 			public void mouseClicked(MouseEvent event) {
@@ -56,7 +50,6 @@ public class Canvas extends JPanel {
 			public void mousePressed(MouseEvent event) {
 				if (event.getY()>80) {
 				query.getLast().addCoordinates(event.getPoint());	
-				paintToBuffer(buffer);
 				repaint();
 				}
 			}
@@ -66,7 +59,6 @@ public class Canvas extends JPanel {
 			public void mouseReleased(MouseEvent event) {
 				if (event.getY()>80) {
 				query.getLast().addCoordinates(event.getPoint());
-				paintToBuffer(buffer);
 				repaint();
 				}
 			}});
@@ -76,7 +68,6 @@ public class Canvas extends JPanel {
 			public void mouseDragged(MouseEvent event) {	
 				if (event.getY()>80) {
 				query.getLast().addCurrCoordinates(event.getPoint());
-				paintToBuffer(buffer);
 				repaint();
 				}
 			}
@@ -88,14 +79,9 @@ public class Canvas extends JPanel {
 			
 		});
 	}
-	public void paintToBuffer(Graphics g) {
-		buffer.setColor(Color.white);
-		buffer.fillRect(0, 80, me.width, me.heigth);
-		query.printTo(g);
-	}
-
+	
 	public void paint(Graphics g) {
-		g.drawImage(buf,0,0,me);
+		g.drawImage(query.getBuf(),0,0,me);
 	}
 
 }

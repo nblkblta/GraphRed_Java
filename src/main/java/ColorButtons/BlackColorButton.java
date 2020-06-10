@@ -15,7 +15,7 @@ public class BlackColorButton extends BaseColorButton {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				if (query.getSize()>0) {
+				if (query.getLast()!=null) {
 					query.getLast().setColor(Color.black);
 				}
 				query.setCurrColor(Color.black);

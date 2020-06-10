@@ -1,11 +1,10 @@
 package GraphRed;
 
+
+
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-
 import javax.swing.JPanel;
-
 import Buttons.EllipseButton;
 import Buttons.PencilButton;
 import Buttons.PolygonButton;
@@ -15,18 +14,17 @@ import Buttons.RefreshButton;
 
 @SuppressWarnings("serial")
 public class ButtonPanel extends JPanel {
-	private int buttonSize = 40;
-	ButtonPanel(Dimension dim,Query query, int buttonSize, Canvas jp){
+	ButtonPanel(Query query, Settings settings){
 		super();
-		this.buttonSize = buttonSize;
-		this.setBounds(0, 0, dim.width, 40);
+		int buttonSize = settings.getButtonSize();
+		this.setBounds(0, 0, settings.getDimension().width, 40);
 		this.setBackground(Color.black);
 		this.add(BorderLayout.SOUTH,new RectButton(buttonSize,query));
 		this.add(BorderLayout.SOUTH,new EllipseButton(buttonSize,query));
 		this.add(BorderLayout.SOUTH,new PolylineButton(buttonSize,query));
 		this.add(BorderLayout.SOUTH,new PolygonButton(buttonSize,query));
 		this.add(BorderLayout.SOUTH,new PencilButton(buttonSize,query));
-		this.add(BorderLayout.SOUTH,new RefreshButton(buttonSize,query,dim,jp));
+		this.add(BorderLayout.SOUTH,new RefreshButton(buttonSize,query));
 	}
 	
 }

@@ -18,8 +18,10 @@ public class RectShape extends BaseShape {
 	
 	@Override
 	public void drawShape(Graphics g) {
+		if(shape!=null) {
 		g.setColor(shapeColor);
 		g.drawRect(((Rectangle)shape).x,((Rectangle)shape).y, ((Rectangle)shape).width,((Rectangle)shape).height);
+		}
 	}
 
 	@Override
