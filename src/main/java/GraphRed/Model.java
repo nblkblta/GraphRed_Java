@@ -2,6 +2,7 @@ package GraphRed;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,16 @@ public class Model implements Observed{
 	
 	public void addShape(BaseShape shape) {
 		query.addShape(shape);
+	}
+	
+	public void addCoordinates(Point2D point) {
+		query.getLast().addCoordinates(point);
+		notifyObservers();
+	}
+	
+	public void addCurrCoordinates(Point2D point) {
+		query.getLast().addCurrCoordinates(point);
+		notifyObservers();
 	}
 	
 	public void setCurrColor(Color color) {

@@ -9,11 +9,10 @@ public class GraphRed extends JFrame implements Observer{
 		super("GraphRedactor");
 		setLocationByPlatform(true);
 		this.setSize(settings.getDimension().width, settings.getDimension().height);
-		this.setVisible(true);
-		
 		this.add(new ButtonPanel(model, settings));
 		this.add(new ColorButtonPanel(model, settings));
 		this.add(new Canvas(model, settings));
+		this.setVisible(true);
 	}
 	@Override
 	public void handleEvent() {

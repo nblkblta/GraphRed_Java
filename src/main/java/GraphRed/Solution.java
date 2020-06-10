@@ -8,9 +8,8 @@ import javax.swing.JFrame;
 
 public class Solution {
 	public static void main(String[] args) {
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); 
 		int buttonSize = 40;
-		Toolkit kit = Toolkit.getDefaultToolkit();
-		Dimension screenSize = kit.getScreenSize(); 
 		Settings settings  = new Settings(screenSize,buttonSize);
 		Model model = new Model(settings);
 		EventQueue.invokeLater(() ->

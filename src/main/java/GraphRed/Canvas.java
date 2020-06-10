@@ -43,7 +43,7 @@ public class Canvas extends JPanel {
 			public void mousePressed(MouseEvent event) {
 				if (event.getY()>2*buttonSize) {
 					if(model.getLast()!=null) {
-						model.getLast().addCoordinates(event.getPoint());
+						model.addCoordinates(event.getPoint());
 						repaint();
 						}
 				}
@@ -53,7 +53,7 @@ public class Canvas extends JPanel {
 			public void mouseReleased(MouseEvent event) {
 				if (event.getY()>2*buttonSize) {
 					if(model.getLast()!=null) {
-						model.getLast().addCoordinates(event.getPoint());
+						model.addCoordinates(event.getPoint());
 						repaint();
 						}
 				}
@@ -65,7 +65,7 @@ public class Canvas extends JPanel {
 			public void mouseDragged(MouseEvent event) {	
 				if (event.getY()>2*buttonSize) {
 					if(model.getLast()!=null) {
-						model.getLast().addCurrCoordinates(event.getPoint());
+						model.addCurrCoordinates(event.getPoint());
 						repaint();
 					}
 				}
