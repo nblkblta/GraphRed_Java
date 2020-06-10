@@ -8,6 +8,7 @@ import ColorButtons.ColorButton;
 
 @SuppressWarnings("serial")
 public class ColorButtonPanel extends JPanel{
+	
 	ColorButtonPanel(Model model, Settings settings){
 		super();
 		int buttonSize = settings.getButtonSize();

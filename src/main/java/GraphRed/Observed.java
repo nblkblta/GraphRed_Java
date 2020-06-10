@@ -1,7 +1,5 @@
 package GraphRed;
 
-
-
 public interface Observed {
 	public void addObserver(Observer observer);
 	

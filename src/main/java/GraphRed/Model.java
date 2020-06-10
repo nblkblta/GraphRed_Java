@@ -83,7 +83,7 @@ public class Model implements Observed{
 	public void notifyObservers() {
 		for (Observer observer: listOfObservers) {
 			observer.handleEvent();
-	}
+		}
 	}
 
 	public void savePng() throws IOException {
