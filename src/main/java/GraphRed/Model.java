@@ -4,8 +4,16 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.imageio.ImageIO;
 
 import Shapes.BaseShape;
 
@@ -17,7 +25,7 @@ public class Model implements Observed{
 	private Settings settings;
 	
 	Model(Settings settings){
-		query = new Query(settings);
+		query = new Query();
 		listOfObservers = new ArrayList<Observer>();
 		this.settings=settings;
 		buf=new BufferedImage(this.settings.getDimension().width,this.settings.getDimension().height, BufferedImage.TYPE_INT_ARGB);
@@ -55,6 +63,8 @@ public class Model implements Observed{
 	}
 
 	public BufferedImage getBuf() {
+		buffer.setColor(Color.white);
+		buffer.fillRect(0, 2*settings.getButtonSize(), settings.getDimension().width, settings.getDimension().height);
 		query.printTo(buffer);
 		return buf;
 	}
@@ -74,6 +84,27 @@ public class Model implements Observed{
 		for (Observer observer: listOfObservers) {
 			observer.handleEvent();
 	}
+	}
+
+	public void savePng() throws IOException {
+		File outputfile = new File("image.png");
+		ImageIO.write(buf, "png", outputfile);
+	}
+
+	public void save() throws IOException {
+		 FileOutputStream outputStream = new FileOutputStream("save.ser");
+	     ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
+	     objectOutputStream.writeObject(query);
+	     objectOutputStream.close();
+	}
+
+	public void load() throws IOException, ClassNotFoundException {
+		FileInputStream fileInputStream = new FileInputStream("save.ser");
+	    try (ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
+			query = (Query) objectInputStream.readObject();
+			notifyObservers();
+		}
+	    
 	}
 		
 }

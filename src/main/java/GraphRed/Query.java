@@ -2,21 +2,22 @@ package GraphRed;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import Shapes.BaseShape;
 
-
-public class Query{
+public class Query implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	private List<BaseShape> listOfShapes;
 	private Color CurrColor;
-	private Settings settings;
 	
-	Query(Settings settings){
+	Query(){
 		listOfShapes = new ArrayList<BaseShape>();
 		CurrColor=Color.black;
-		this.settings=settings;
+		
 	}
 	
 	public void addShape(BaseShape shape) {
@@ -25,8 +26,6 @@ public class Query{
 	}
 	
 	public void printTo(Graphics buffer) {
-		buffer.setColor(Color.white);
-		buffer.fillRect(0, 2*settings.getButtonSize(), settings.getDimension().width, settings.getDimension().height);
 		for (BaseShape shape: listOfShapes) {
 			if(shape.getShape()!=null) {
 			shape.drawShape(buffer);
