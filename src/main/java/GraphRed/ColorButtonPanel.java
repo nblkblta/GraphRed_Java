@@ -4,56 +4,38 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JPanel;
 
-import ColorButtons.AppleColorButton;
-import ColorButtons.BlackColorButton;
-import ColorButtons.BlueColorButton;
-import ColorButtons.BrownColorButton;
-import ColorButtons.CyanColorButton;
-import ColorButtons.DarkgreenColorButton;
-import ColorButtons.GrayColorButton;
-import ColorButtons.GreenColorButton;
-import ColorButtons.MagentaColorButton;
-import ColorButtons.OrangeColorButton;
-import ColorButtons.OrangeredColorButton;
-import ColorButtons.PinkColorButton;
-import ColorButtons.PurpleColorButton;
-import ColorButtons.RedColorButton;
-import ColorButtons.SeaColorButton;
-import ColorButtons.SkyColorButton;
-import ColorButtons.SteelColorButton;
-import ColorButtons.VioletColorButton;
-import ColorButtons.WhiteColorButton;
-import ColorButtons.YellowColorButton;
+import ColorButtons.ColorButton;
+
 
 @SuppressWarnings("serial")
 public class ColorButtonPanel extends JPanel{
-	ColorButtonPanel(Query query, Settings settings){
+	ColorButtonPanel(Model model, Settings settings){
 		super();
 		int buttonSize = settings.getButtonSize();
 		int width = settings.getDimension().width;
 		this.setBounds(0, buttonSize, width, buttonSize);
 		this.setBackground(Color.black);
 		
-		this.add(BorderLayout.WEST,new VioletColorButton(query));
-		this.add(BorderLayout.WEST,new PurpleColorButton(query));
-		this.add(BorderLayout.WEST,new PinkColorButton(query));
-		this.add(BorderLayout.WEST,new MagentaColorButton(query));
-		this.add(BorderLayout.WEST,new RedColorButton(query));
-		this.add(BorderLayout.WEST,new BrownColorButton(query));
-		this.add(BorderLayout.WEST,new OrangeredColorButton(query));
-		this.add(BorderLayout.WEST,new OrangeColorButton(query));
-		this.add(BorderLayout.WEST,new YellowColorButton(query));
-		this.add(BorderLayout.WEST,new AppleColorButton(query));
-		this.add(BorderLayout.WEST,new GreenColorButton(query));
-		this.add(BorderLayout.WEST,new DarkgreenColorButton(query));
-		this.add(BorderLayout.WEST,new SeaColorButton(query));
-		this.add(BorderLayout.WEST,new CyanColorButton(query));
-		this.add(BorderLayout.WEST,new SkyColorButton(query));
-		this.add(BorderLayout.WEST,new SteelColorButton(query));
-		this.add(BorderLayout.WEST,new BlueColorButton(query));
-		this.add(BorderLayout.WEST,new BlackColorButton(query));
-		this.add(BorderLayout.WEST,new GrayColorButton(query));
-		this.add(BorderLayout.WEST,new WhiteColorButton(query));
+		this.add(BorderLayout.WEST,new ColorButton(model, new Color(75, 0, 130)));
+		this.add(BorderLayout.WEST,new ColorButton(model, new Color(148, 0, 211)));
+		this.add(BorderLayout.WEST,new ColorButton(model, Color.pink));
+		this.add(BorderLayout.WEST,new ColorButton(model, Color.magenta));
+		this.add(BorderLayout.WEST,new ColorButton(model, Color.red));
+		this.add(BorderLayout.WEST,new ColorButton(model, new Color(139, 69, 19)));
+		this.add(BorderLayout.WEST,new ColorButton(model, new Color(255, 100, 0)));
+		this.add(BorderLayout.WEST,new ColorButton(model, Color.orange));
+		this.add(BorderLayout.WEST,new ColorButton(model, Color.yellow));
+		this.add(BorderLayout.WEST,new ColorButton(model, new Color(173, 255, 47)));
+		this.add(BorderLayout.WEST,new ColorButton(model, Color.green));
+		this.add(BorderLayout.WEST,new ColorButton(model, new Color(0, 100, 0)));
+		this.add(BorderLayout.WEST,new ColorButton(model, new Color(46, 139, 87)));
+		this.add(BorderLayout.WEST,new ColorButton(model, Color.cyan));
+		this.add(BorderLayout.WEST,new ColorButton(model, new Color(135, 206, 235)));
+		this.add(BorderLayout.WEST,new ColorButton(model, new Color(70, 130, 180)));
+		this.add(BorderLayout.WEST,new ColorButton(model, Color.blue));
+		this.add(BorderLayout.WEST,new ColorButton(model, Color.black));
+		this.add(BorderLayout.WEST,new ColorButton(model, Color.gray));
+		this.add(BorderLayout.WEST,new ColorButton(model, Color.white));
 	}
 }
 

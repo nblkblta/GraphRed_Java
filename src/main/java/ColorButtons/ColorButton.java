@@ -3,32 +3,23 @@ package ColorButtons;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import GraphRed.Query;
+import javax.swing.JButton;
+import GraphRed.Model;
 
 @SuppressWarnings("serial")
-public class VioletColorButton extends BaseColorButton{
-	
-	Color color = new Color(75, 0, 130);
-	
-	public VioletColorButton(Query query){
+public class ColorButton extends JButton {
+	public ColorButton(Model model, Color color){
 		super();
 		this.setBackground(color);
 		this.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				if (query.getLast()!=null) {
-					query.getLast().setColor(color);
+				if (model.getLast()!=null) {
+					model.getLast().setColor(color);
 				}
-				query.setCurrColor(color);
+				model.setCurrColor(color);
 			}
 		});
 	}
-
-	@Override
-	public Color getColor() {
-		return color;
-	}
-
 }

@@ -3,18 +3,18 @@ package Buttons;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import GraphRed.Query;
+import GraphRed.Model;
 import Shapes.PencilShape;
 
 @SuppressWarnings("serial")
 public class PencilButton extends BaseButton{
-	public PencilButton(int buttonSize, Query query) {
+	public PencilButton(int buttonSize, Model model) {
 		super("Pencil");
 		this.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				query.addShape(new PencilShape());
+				model.addShape(new PencilShape());
 				
 			}
 			

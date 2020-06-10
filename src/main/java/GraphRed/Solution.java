@@ -12,12 +12,12 @@ public class Solution {
 		Toolkit kit = Toolkit.getDefaultToolkit();
 		Dimension screenSize = kit.getScreenSize(); 
 		Settings settings  = new Settings(screenSize,buttonSize);
-		Query query = new Query(settings);
+		Model model = new Model(settings);
 		EventQueue.invokeLater(() ->
 		{
-		GraphRed gr = new GraphRed(query,settings);
+		GraphRed gr = new GraphRed(model,settings);
 		gr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		query.addObserver(gr);
+		model.addObserver(gr);
 		});
 	}
 }
