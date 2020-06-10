@@ -20,6 +20,7 @@ import javax.swing.JPanel;
 public class Canvas extends JPanel {
 	private Query query;
 	private Canvas me;
+	private int buttonSize;
 	
 	public Canvas(Query query, Settings settings) {
 		me=this;
@@ -48,27 +49,33 @@ public class Canvas extends JPanel {
 			
 			@Override
 			public void mousePressed(MouseEvent event) {
-				if (event.getY()>80) {
-				query.getLast().addCoordinates(event.getPoint());	
-				repaint();
+				if (event.getY()>2*buttonSize) {
+					if(query.getLast()!=null) {
+						query.getLast().addCoordinates(event.getPoint());
+						repaint();
+						}
 				}
 			}
 			
 
 			@Override
 			public void mouseReleased(MouseEvent event) {
-				if (event.getY()>80) {
-				query.getLast().addCoordinates(event.getPoint());
-				repaint();
+				if (event.getY()>2*buttonSize) {
+					if(query.getLast()!=null) {
+						query.getLast().addCoordinates(event.getPoint());
+						repaint();
+						}
 				}
 			}});
 		this.addMouseMotionListener(new MouseMotionListener() {
 
 			@Override
 			public void mouseDragged(MouseEvent event) {	
-				if (event.getY()>80) {
-				query.getLast().addCurrCoordinates(event.getPoint());
-				repaint();
+				if (event.getY()>2*buttonSize) {
+					if(query.getLast()!=null) {
+						query.getLast().addCurrCoordinates(event.getPoint());
+						repaint();
+					}
 				}
 			}
 

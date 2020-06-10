@@ -9,7 +9,8 @@ import java.util.List;
 import Shapes.BaseShape;
 
 
-public class Query {
+public class Query implements Observed{
+	private List<Observer> listOfObservers;
 	private List<BaseShape> listOfShapes;
 	private Color CurrColor;
 	private BufferedImage buf;
@@ -18,6 +19,7 @@ public class Query {
 	
 	Query(Settings settings){
 		listOfShapes = new ArrayList<BaseShape>();
+		listOfObservers = new ArrayList<Observer>();
 		CurrColor=Color.black;
 		this.settings=settings;
 		buf=new BufferedImage(this.settings.getDimension().width,this.settings.getDimension().height, BufferedImage.TYPE_INT_ARGB);
@@ -40,6 +42,9 @@ public class Query {
 		}	
 	}
 	public BaseShape getLast() {
+		if(listOfShapes.size()==0) {
+			return null;
+		}
 		return listOfShapes.get(listOfShapes.size()-1);
 	}
 	
@@ -49,15 +54,29 @@ public class Query {
 	
 	public void refresh() {
 		this.listOfShapes.clear();
+		notifyObservers();
 	}
-	
 
 	public BufferedImage getBuf() {
 		printTo();
 		return buf;
 	}
 
-	public Settings getSettings() {
-		return settings;
+	@Override
+	public void addObserver(Observer observer) {
+		listOfObservers.add(observer);
 	}
+
+	@Override
+	public void removeObserver(Observer observer) {
+		listOfObservers.remove(observer);
+	}
+
+	@Override
+	public void notifyObservers() {
+		for (Observer observer: listOfObservers) {
+			observer.handleEvent();
+	}
+	}
+		
 }
