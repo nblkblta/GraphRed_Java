@@ -1,18 +1,19 @@
-package controllers;
+package buttonsControllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import model.Model;
-import shapes.RectShape;
+import shapes.PencilShape;
 
-public class RectangleButtonListener implements ActionListener {
+
+public class PencilButtonListener implements ActionListener {
 	private Model model;
-	public RectangleButtonListener(Model model) {
+	public PencilButtonListener(Model model) {
 		this.model = model;
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		model.addShape(new RectShape());
+		model.addShape(new PencilShape());
 	}
 }

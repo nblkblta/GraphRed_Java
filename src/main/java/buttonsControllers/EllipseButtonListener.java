@@ -1,18 +1,18 @@
-package controllers;
+package buttonsControllers;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import model.Model;
-import shapes.PolylineShape;
+import shapes.EllipseShape;
 
-public class PolylineButtonListener implements ActionListener {
+public class EllipseButtonListener implements ActionListener {
 	private Model model;
-	public PolylineButtonListener(Model model) {
+	public EllipseButtonListener(Model model) {
 		this.model = model;
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		model.addShape(new PolylineShape());
+		model.addShape(new EllipseShape());
 	}
 }

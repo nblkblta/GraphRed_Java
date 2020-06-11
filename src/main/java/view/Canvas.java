@@ -6,8 +6,8 @@ package view;
 import java.awt.*;
 import javax.swing.JPanel;
 
-import controllers.CanvasMouseListener;
-import controllers.CanvasMouseMotionListener;
+import canvasControllers.CanvasMouseListener;
+import canvasControllers.CanvasMouseMotionListener;
 import model.Model;
 import model.Settings;
 
