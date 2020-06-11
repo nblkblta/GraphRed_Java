@@ -17,7 +17,7 @@ public class ButtonPanel extends JPanel {
 	ButtonPanel(Model model, Settings settings){
 		super();
 		int buttonSize = settings.getButtonSize();
-		this.setBounds(0, 0, settings.getDimension().width, 40);
+		this.setBounds(0, 0, settings.getDimension().width, buttonSize);
 		this.setBackground(Color.black);
 		this.add(new RectButton(buttonSize,model));
 		this.add(new EllipseButton(buttonSize,model));
