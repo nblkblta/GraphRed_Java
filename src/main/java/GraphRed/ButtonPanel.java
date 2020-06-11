@@ -54,9 +54,7 @@ public class ButtonPanel extends JPanel {
 		int buttonSize = settings.getButtonSize();
 		this.setBounds(0, 0, settings.getDimension().width, buttonSize);
 		this.setBackground(Color.black);
-		
-		Button[] button = Button.values();
-		for(Button i: button) {
+		for(Button i: Button.values()) {
 			this.add(i.createButton(buttonSize,model));
 		}
 		

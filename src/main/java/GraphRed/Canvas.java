@@ -10,12 +10,6 @@ import java.awt.event.MouseMotionListener;
 
 import javax.swing.JPanel;
 
-
-
-/**
- * @author nblk
- *
- */
 @SuppressWarnings("serial")
 public class Canvas extends JPanel {
 	private Model model;

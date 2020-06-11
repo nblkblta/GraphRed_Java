@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import GraphRed.Model;
-import GraphRed.Settings;
 import Shapes.RectShape;
 
 @SuppressWarnings("serial")
