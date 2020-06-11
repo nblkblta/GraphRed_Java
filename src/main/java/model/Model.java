@@ -1,4 +1,4 @@
-package GraphRed;
+package model;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -15,7 +15,7 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 
-import Shapes.BaseShape;
+import shapes.BaseShape;
 
 public class Model implements Observed{
 	private List<Observer> listOfObservers;
@@ -24,14 +24,14 @@ public class Model implements Observed{
 	private Graphics buffer;
 	private Settings settings;
 	
-	Model(Settings settings){
+	public Model(Settings settings){
 		query = new Query();
 		listOfObservers = new ArrayList<Observer>();
 		this.settings=settings;
 		buf=new BufferedImage(this.settings.getDimension().width,this.settings.getDimension().height, BufferedImage.TYPE_INT_ARGB);
 		buffer=buf.getGraphics();
 		buffer.setColor(Color.white);
-		buffer.fillRect(0, 2*this.settings.getButtonSize(), this.settings.getDimension().width, this.settings.getDimension().height);
+		buffer.fillRect(0, this.settings.getPanelCount()*this.settings.getButtonSize(), this.settings.getDimension().width, this.settings.getDimension().height);
 	}
 	
 	public void refresh() {
@@ -48,14 +48,14 @@ public class Model implements Observed{
 	}
 	
 	public void addCoordinates(Point2D point) {
-		if(point.getY()>settings.getButtonSize()*2) {
+		if(point.getY()>settings.getButtonSize()*this.settings.getPanelCount()) {
 		query.getLast().addCoordinates(point);
 		notifyObservers();
 		}
 	}
 	
 	public void addCurrCoordinates(Point2D point) {
-		if(point.getY()>settings.getButtonSize()*2) {
+		if(point.getY()>settings.getButtonSize()*this.settings.getPanelCount()) {
 		query.getLast().addCurrCoordinates(point);
 		notifyObservers();
 		}
@@ -68,7 +68,7 @@ public class Model implements Observed{
 
 	public BufferedImage getBuf() {
 		buffer.setColor(Color.white);
-		buffer.fillRect(0, 2*settings.getButtonSize(), settings.getDimension().width, settings.getDimension().height);
+		buffer.fillRect(0, this.settings.getPanelCount()*settings.getButtonSize(), settings.getDimension().width, settings.getDimension().height);
 		query.printTo(buffer);
 		return buf;
 	}

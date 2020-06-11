@@ -1,4 +1,4 @@
-package GraphRed;
+package model;
 
 public interface Observed {
 	public void addObserver(Observer observer);

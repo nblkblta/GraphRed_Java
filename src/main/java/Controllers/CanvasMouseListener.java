@@ -1,9 +1,9 @@
-package Controllers;
+package controllers;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import GraphRed.Model;
+import model.Model;
 
 public class CanvasMouseListener implements MouseListener {
 	private Model model;

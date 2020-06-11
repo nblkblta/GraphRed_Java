@@ -1,10 +1,11 @@
-package ColorButtons;
+package buttons;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import GraphRed.Model;
+
+import model.Model;
 
 @SuppressWarnings("serial")
 public class ColorButton extends JButton {

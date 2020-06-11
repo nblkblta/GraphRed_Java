@@ -1,12 +1,15 @@
 /**
  * 
  */
-package GraphRed;
+package view;
 
 import java.awt.*;
 import javax.swing.JPanel;
-import Controllers.CanvasMouseListener;
-import Controllers.CanvasMouseMotionListener;
+
+import controllers.CanvasMouseListener;
+import controllers.CanvasMouseMotionListener;
+import model.Model;
+import model.Settings;
 
 @SuppressWarnings("serial")
 public class Canvas extends JPanel {
@@ -20,7 +23,7 @@ public class Canvas extends JPanel {
 		int heigth = settings.getDimension().height;
 		this.buttonSize = settings.getButtonSize();
 		this.model=model;
-		this.setBounds(0, 2*buttonSize, width, heigth);
+		this.setBounds(0, settings.getPanelCount()*buttonSize, width, heigth);
 		this.repaint();
 		this.addMouseListener(new CanvasMouseListener(model));
 		this.addMouseMotionListener(new CanvasMouseMotionListener(model));

@@ -1,9 +1,9 @@
-package Controllers;
+package controllers;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 
-import GraphRed.Model;
+import model.Model;
 
 public class CanvasMouseMotionListener implements MouseMotionListener {
 	private Model model;

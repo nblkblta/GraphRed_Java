@@ -1,4 +1,4 @@
-package GraphRed;
+package model;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import Shapes.BaseShape;
+import shapes.BaseShape;
 
 public class Query implements Serializable{
 	

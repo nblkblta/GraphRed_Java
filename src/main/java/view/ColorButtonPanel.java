@@ -1,10 +1,12 @@
-package GraphRed;
+package view;
 
 import java.awt.Color;
 
 import javax.swing.JPanel;
 
-import ColorButtons.ColorButton;
+import buttons.ColorButton;
+import model.Model;
+import model.Settings;
 
 
 @SuppressWarnings("serial")
