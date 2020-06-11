@@ -45,8 +45,9 @@ public class ButtonPanel extends JPanel {
 		Load{
 			public LoadButton createButton(int buttonSize, Model model) {return new LoadButton(buttonSize,model);}
 		};
-		
-		public abstract BaseButton createButton(int buttonSize, Model model);
+	
+
+		abstract public BaseButton createButton(int buttonSize, Model model) ;
 	}
 	
 	ButtonPanel(Model model, Settings settings){

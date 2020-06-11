@@ -48,13 +48,17 @@ public class Model implements Observed{
 	}
 	
 	public void addCoordinates(Point2D point) {
+		if(point.getY()>settings.getButtonSize()*2) {
 		query.getLast().addCoordinates(point);
 		notifyObservers();
+		}
 	}
 	
 	public void addCurrCoordinates(Point2D point) {
+		if(point.getY()>settings.getButtonSize()*2) {
 		query.getLast().addCurrCoordinates(point);
 		notifyObservers();
+		}
 	}
 	
 	public void setCurrColor(Color color) {
