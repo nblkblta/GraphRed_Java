@@ -15,6 +15,8 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 
+import patterns.Observed;
+import patterns.Observer;
 import shapes.BaseShape;
 
 public class Model implements Observed{

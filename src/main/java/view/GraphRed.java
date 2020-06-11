@@ -3,8 +3,8 @@ package view;
 import javax.swing.JFrame;
 
 import model.Model;
-import model.Observer;
 import model.Settings;
+import patterns.Observer;
 
 public class GraphRed extends JFrame implements Observer{
 	

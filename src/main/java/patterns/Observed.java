@@ -1,4 +1,4 @@
-package model;
+package patterns;
 
 public interface Observed {
 	public void addObserver(Observer observer);
