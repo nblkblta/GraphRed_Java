@@ -6,16 +6,12 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.PathIterator;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Curve implements Shape,Serializable{
+public class Curve implements Shape{
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -6994938308039172373L;
+	
 	private List<Point2D> coordinates;
 	Curve(){
 		this.coordinates = new ArrayList<Point2D>();

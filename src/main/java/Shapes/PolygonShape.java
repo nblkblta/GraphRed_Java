@@ -12,10 +12,7 @@ import java.util.List;
 
 
 public class PolygonShape extends BaseShape {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -1432561204506083949L;
+	
 	private Color shapeColor;
 	private Polygon shape=null;
 	public PolygonShape(){

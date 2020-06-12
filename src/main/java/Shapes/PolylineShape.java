@@ -8,10 +8,7 @@ import java.util.List;
 
 
 public class PolylineShape extends BaseShape {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -95881300898258468L;
+	
 	private Color shapeColor;
 	private Polyline shape=null;
 	public PolylineShape(){

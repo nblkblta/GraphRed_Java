@@ -9,10 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RectShape extends BaseShape {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 3602242150527923891L;
+
 	private List<Point2D> coordinates;
 	private Color shapeColor;
 	private Shape shape=null;

@@ -4,11 +4,10 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Shape;
 import java.awt.geom.Point2D;
-import java.io.Serializable;
 import java.util.List;
 
-@SuppressWarnings("serial")
-public abstract class BaseShape implements Serializable{
+
+public abstract class BaseShape{
 	abstract public void drawShape(Graphics g);
 	abstract public Color getColor();
 	abstract public void setColor(Color color);

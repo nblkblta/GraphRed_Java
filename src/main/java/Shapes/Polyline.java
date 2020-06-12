@@ -6,16 +6,11 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.PathIterator;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Polyline implements Shape, Serializable{
+public class Polyline implements Shape{
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -6942345018107833340L;
 	private List<Point2D> coordinates;
 	
 	Polyline(){

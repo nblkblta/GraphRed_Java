@@ -8,10 +8,6 @@ import java.util.List;
 
 public class PencilShape extends BaseShape{
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private Color shapeColor;
 	private Curve shape=null;
 	public PencilShape(){
