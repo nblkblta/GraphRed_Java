@@ -6,11 +6,15 @@ public class Settings {
 	private Dimension dimension;
 	private int buttonSize ;
 	private int panelCount ;
+	private static Settings me;
 	
-	public Settings(Dimension dimension, int buttonSize, int panelCount) {
-		this.setDimension(dimension);
-		this.setButtonSize(buttonSize);
-		this.setPanelCount(panelCount);
+	private Settings() {}
+	
+	public static Settings getSettings() {
+		if (me==null) {
+			me=new Settings();
+		}
+		return me;
 	}
 
 	public Dimension getDimension() {

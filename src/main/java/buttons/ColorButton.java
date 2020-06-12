@@ -9,17 +9,17 @@ import model.Model;
 
 @SuppressWarnings("serial")
 public class ColorButton extends JButton {
-	public ColorButton(Model model, Color color){
+	public ColorButton(Color color){
 		super();
 		this.setBackground(color);
 		this.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				if (model.getLast()!=null) {
-					model.getLast().setColor(color);
+				if (Model.getModel().getLast()!=null) {
+					Model.getModel().getLast().setColor(color);
 				}
-				model.setCurrColor(color);
+				Model.getModel().setCurrColor(color);
 			}
 		});
 	}

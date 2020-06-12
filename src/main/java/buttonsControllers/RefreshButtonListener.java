@@ -6,12 +6,11 @@ import java.awt.event.ActionListener;
 import model.Model;
 
 public class RefreshButtonListener implements ActionListener {
-	private Model model;
-	public RefreshButtonListener(Model model) {
-		this.model = model;
+	
+	public RefreshButtonListener() {	
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		model.refresh();
+		Model.getModel().refresh();
 	}
 }

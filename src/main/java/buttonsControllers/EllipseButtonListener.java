@@ -7,12 +7,11 @@ import model.Model;
 import shapes.EllipseShape;
 
 public class EllipseButtonListener implements ActionListener {
-	private Model model;
-	public EllipseButtonListener(Model model) {
-		this.model = model;
+	
+	public EllipseButtonListener() {
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		model.addShape(new EllipseShape());
+		Model.getModel().addShape(new EllipseShape());
 	}
 }

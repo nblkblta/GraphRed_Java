@@ -7,12 +7,10 @@ import model.Model;
 import shapes.PolygonShape;
 
 public class PolygonButtonListener implements ActionListener {
-	private Model model;
-	public PolygonButtonListener(Model model) {
-		this.model = model;
+	public PolygonButtonListener() {
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		model.addShape(new PolygonShape());
+		Model.getModel().addShape(new PolygonShape());
 	}
 }

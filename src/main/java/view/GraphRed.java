@@ -1,21 +1,19 @@
 package view;
 
 import javax.swing.JFrame;
-
-import model.Model;
 import model.Settings;
 import patterns.Observer;
 
 public class GraphRed extends JFrame implements Observer{
 	
 	private static final long serialVersionUID = 2L;
-	public GraphRed(Model model,Settings settings){
+	public GraphRed(){
 		super("GraphRedactor");
 		setLocationByPlatform(true);
-		this.setSize(settings.getDimension().width, settings.getDimension().height);
-		this.add(new ButtonPanel(model, settings));
-		this.add(new ColorButtonPanel(model, settings));
-		this.add(new Canvas(model, settings));
+		this.setSize(Settings.getSettings().getDimension().width, Settings.getSettings().getDimension().height);
+		this.add(new ButtonPanel());
+		this.add(new ColorButtonPanel());
+		this.add(new Canvas());
 		this.setVisible(true);
 	}
 	@Override

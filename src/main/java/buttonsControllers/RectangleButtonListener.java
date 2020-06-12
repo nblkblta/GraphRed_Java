@@ -7,12 +7,11 @@ import model.Model;
 import shapes.RectShape;
 
 public class RectangleButtonListener implements ActionListener {
-	private Model model;
-	public RectangleButtonListener(Model model) {
-		this.model = model;
+	
+	public RectangleButtonListener() {
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		model.addShape(new RectShape());
+		Model.getModel().addShape(new RectShape());
 	}
 }

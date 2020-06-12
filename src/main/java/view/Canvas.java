@@ -17,12 +17,13 @@ public class Canvas extends JPanel {
 	private Canvas me;
 	private int buttonSize;
 	
-	public Canvas(Model model, Settings settings) {
+	public Canvas() {
 		me=this;
+		Settings settings = Settings.getSettings();
 		int width = settings.getDimension().width;
 		int heigth = settings.getDimension().height;
 		this.buttonSize = settings.getButtonSize();
-		this.model=model;
+		this.model=Model.getModel();
 		this.setBounds(0, settings.getPanelCount()*buttonSize, width, heigth);
 		this.repaint();
 		this.addMouseListener(new CanvasMouseListener(model));

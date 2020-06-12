@@ -15,13 +15,14 @@ public class Solution {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); 
 		int buttonSize = 40;
 		int panelCount = 2;
-		Settings settings  = new Settings(screenSize, buttonSize, panelCount);
-		Model model = new Model(settings);
+		Settings.getSettings().setDimension(screenSize);
+		Settings.getSettings().setButtonSize(buttonSize);
+		Settings.getSettings().setPanelCount(panelCount);
 		EventQueue.invokeLater(() ->
 		{
-		GraphRed gr = new GraphRed(model,settings);
+		GraphRed gr = new GraphRed();
 		gr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		model.addObserver(gr);
+		Model.getModel().addObserver(gr);
 		});
 	}
 }

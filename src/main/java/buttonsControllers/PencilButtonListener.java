@@ -8,12 +8,12 @@ import shapes.PencilShape;
 
 
 public class PencilButtonListener implements ActionListener {
-	private Model model;
-	public PencilButtonListener(Model model) {
-		this.model = model;
+	
+	public PencilButtonListener() {
+		
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		model.addShape(new PencilShape());
+		Model.getModel().addShape(new PencilShape());
 	}
 }

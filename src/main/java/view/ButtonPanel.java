@@ -12,25 +12,24 @@ import buttonsControllers.PolylineButtonListener;
 import buttonsControllers.RectangleButtonListener;
 import buttonsControllers.SaveButtonListener;
 import buttonsControllers.SavePngButtonListener;
-import model.Model;
 import model.Settings;
 
 @SuppressWarnings("serial")
 public class ButtonPanel extends JPanel {
 	
-	ButtonPanel(Model model, Settings settings){
+	ButtonPanel(){
 		super();
-		int buttonSize = settings.getButtonSize();
-		this.setBounds(0, 0, settings.getDimension().width, buttonSize);
+		int buttonSize = Settings.getSettings().getButtonSize();
+		this.setBounds(0, 0, Settings.getSettings().getDimension().width, buttonSize);
 		this.setBackground(Color.black);
-		this.add(new BaseButton("Ellipse",new EllipseButtonListener(model)));
-		this.add(new BaseButton("Rectangle",new RectangleButtonListener(model)));
-		this.add(new BaseButton("Polyline",new PolylineButtonListener(model)));
-		this.add(new BaseButton("Polygon",new PolygonButtonListener(model)));
-		this.add(new BaseButton("Pencil",new PencilButtonListener(model)));
-		this.add(new BaseButton("Save",new SaveButtonListener(model)));
-		this.add(new BaseButton("Load",new LoadButtonListener(model)));
-		this.add(new BaseButton("SaveAsPNG",new SavePngButtonListener(model)));
+		this.add(new BaseButton("Ellipse",new EllipseButtonListener()));
+		this.add(new BaseButton("Rectangle",new RectangleButtonListener()));
+		this.add(new BaseButton("Polyline",new PolylineButtonListener()));
+		this.add(new BaseButton("Polygon",new PolygonButtonListener()));
+		this.add(new BaseButton("Pencil",new PencilButtonListener()));
+		this.add(new BaseButton("Save",new SaveButtonListener()));
+		this.add(new BaseButton("Load",new LoadButtonListener()));
+		this.add(new BaseButton("SaveAsPNG",new SavePngButtonListener()));
 		
 	}
 	

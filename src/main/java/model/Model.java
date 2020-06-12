@@ -25,7 +25,7 @@ public class Model implements Observed{
 	private BufferedImage buf;
 	private Graphics buffer;
 	private Settings settings;
-	
+	private static Model me;
 	public Model(Settings settings){
 		query = new Queue();
 		listOfObservers = new ArrayList<Observer>();
@@ -34,6 +34,22 @@ public class Model implements Observed{
 		buffer=buf.getGraphics();
 		buffer.setColor(Color.white);
 		buffer.fillRect(0, this.settings.getPanelCount()*this.settings.getButtonSize(), this.settings.getDimension().width, this.settings.getDimension().height);
+	}
+	private Model(){
+		query = new Queue();
+		listOfObservers = new ArrayList<Observer>();
+		this.settings=Settings.getSettings();
+		buf=new BufferedImage(this.settings.getDimension().width,this.settings.getDimension().height, BufferedImage.TYPE_INT_ARGB);
+		buffer=buf.getGraphics();
+		buffer.setColor(Color.white);
+		buffer.fillRect(0, this.settings.getPanelCount()*this.settings.getButtonSize(), this.settings.getDimension().width, this.settings.getDimension().height);
+	}
+	
+	public static Model getModel() {
+		if(me==null) {
+			me=new Model();
+		}
+		return me;	
 	}
 	
 	public void refresh() {

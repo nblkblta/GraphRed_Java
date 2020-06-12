@@ -7,14 +7,13 @@ import java.io.IOException;
 import model.Model;
 
 public class LoadButtonListener implements ActionListener {
-	private Model model;
-	public LoadButtonListener(Model model) {
-		this.model = model;
+
+	public LoadButtonListener() {
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		try {
-			model.load();
+			Model.getModel().load();
 		} catch (ClassNotFoundException | IOException e) {
 			e.printStackTrace();
 		}

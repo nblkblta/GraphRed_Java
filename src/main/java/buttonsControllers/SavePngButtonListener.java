@@ -7,14 +7,13 @@ import java.io.IOException;
 import model.Model;
 
 public class SavePngButtonListener implements ActionListener {
-	private Model model;
-	public SavePngButtonListener(Model model) {
-		this.model = model;
+	
+	public SavePngButtonListener() {
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		try {
-			model.savePng();
+			Model.getModel().savePng();
 		} catch (IOException e) {
 			// TODO Автоматически созданный блок catch
 			e.printStackTrace();

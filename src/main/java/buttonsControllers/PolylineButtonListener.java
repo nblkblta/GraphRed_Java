@@ -7,12 +7,11 @@ import model.Model;
 import shapes.PolylineShape;
 
 public class PolylineButtonListener implements ActionListener {
-	private Model model;
-	public PolylineButtonListener(Model model) {
-		this.model = model;
+	
+	public PolylineButtonListener() {
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
-		model.addShape(new PolylineShape());
+		Model.getModel().addShape(new PolylineShape());
 	}
 }
