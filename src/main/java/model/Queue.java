@@ -8,13 +8,13 @@ import java.util.List;
 
 import shapes.BaseShape;
 
-public class Query implements Serializable{
+public class Queue implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	private List<BaseShape> listOfShapes;
 	private Color CurrColor;
 	
-	Query(){
+	Queue(){
 		listOfShapes = new ArrayList<BaseShape>();
 		CurrColor=Color.black;
 		

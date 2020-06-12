@@ -21,13 +21,13 @@ import shapes.BaseShape;
 
 public class Model implements Observed{
 	private List<Observer> listOfObservers;
-	private Query query;
+	private Queue query;
 	private BufferedImage buf;
 	private Graphics buffer;
 	private Settings settings;
 	
 	public Model(Settings settings){
-		query = new Query();
+		query = new Queue();
 		listOfObservers = new ArrayList<Observer>();
 		this.settings=settings;
 		buf=new BufferedImage(this.settings.getDimension().width,this.settings.getDimension().height, BufferedImage.TYPE_INT_ARGB);
@@ -107,7 +107,7 @@ public class Model implements Observed{
 	public void load() throws IOException, ClassNotFoundException {
 		FileInputStream fileInputStream = new FileInputStream("save.ser");
 	    try (ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
-			query = (Query) objectInputStream.readObject();
+			query = (Queue) objectInputStream.readObject();
 			notifyObservers();
 		}
 	    
