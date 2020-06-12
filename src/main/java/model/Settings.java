@@ -2,13 +2,18 @@ package model;
 
 import java.awt.Dimension;
 
+
+
 public class Settings {
 	private Dimension dimension;
 	private int buttonSize ;
 	private int panelCount ;
 	private static Settings me;
+
 	
-	private Settings() {}
+	private Settings() {
+		
+	}
 	
 	public static Settings getSettings() {
 		if (me==null) {
@@ -40,5 +45,6 @@ public class Settings {
 	public void setPanelCount(int panelCount) {
 		this.panelCount = panelCount;
 	}
+
 	
 }
