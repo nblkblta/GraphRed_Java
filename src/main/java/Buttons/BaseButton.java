@@ -3,37 +3,29 @@ package buttons;
 
 import javax.swing.JButton;
 
-import buttonsControllers.EllipseButtonListener;
-import buttonsControllers.LoadButtonListener;
-import buttonsControllers.PencilButtonListener;
-import buttonsControllers.PolygonButtonListener;
-import buttonsControllers.PolylineButtonListener;
-import buttonsControllers.RectangleButtonListener;
-import buttonsControllers.SaveButtonListener;
-import buttonsControllers.SavePngButtonListener;
-
+import buttonsControllers.ButtonListener;
 
 @SuppressWarnings("serial")
 public class BaseButton extends JButton{
 	public BaseButton(String s){
 		super(s);
 		if (s.equals("Ellipse")) {
-			this.addActionListener(new EllipseButtonListener());
+			this.addActionListener(new ButtonListener(s));
 		} else if (s.equals("Rectangle")) {
-			this.addActionListener(new RectangleButtonListener());
+			this.addActionListener(new ButtonListener(s));
 		}else if (s.equals("Polyline")) {
-			this.addActionListener(new PolylineButtonListener());
+			this.addActionListener(new ButtonListener(s));
 		}else if (s.equals("Polygon")) {
-			this.addActionListener(new PolygonButtonListener());
+			this.addActionListener(new ButtonListener(s));
 		}else if (s.equals("Pencil")) {
-			this.addActionListener(new PencilButtonListener());
+			this.addActionListener(new ButtonListener(s));
 		}else if (s.equals("Save")) {
-			this.addActionListener(new SaveButtonListener());
+			this.addActionListener(new ButtonListener(s));
 		}else if (s.equals("Load")) {
-			this.addActionListener(new LoadButtonListener());
+			this.addActionListener(new ButtonListener(s));
 		}else if (s.equals("SaveAsPNG")) {
-			this.addActionListener(new SavePngButtonListener());
-		}
+			this.addActionListener(new ButtonListener(s));
+		}else throw new RuntimeException(s+"is unknown button");
 		
 	}
 
