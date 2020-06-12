@@ -61,4 +61,19 @@ public class RectShape extends BaseShape {
 		shape=rect;
 	}
 
+	@Override
+	public List<Point2D> getPoints() {
+		return coordinates;
+	}
+	@Override
+	public String getType() {
+		return "Rectangle";
+	}
+
+	@Override
+	public void setCoordinates(List<Point2D> points) {
+		addCoordinates(points.get(0));
+		addCurrCoordinates(points.get(1));
+	}
+
 }

@@ -16,7 +16,7 @@ public class Curve implements Shape,Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = -6994938308039172373L;
-	List<Point2D> coordinates;
+	private List<Point2D> coordinates;
 	Curve(){
 		this.coordinates = new ArrayList<Point2D>();
 	}
@@ -84,6 +84,10 @@ public class Curve implements Shape,Serializable{
 	public PathIterator getPathIterator(AffineTransform at, double flatness) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public List<Point2D> getCoordinates() {
+		return coordinates;
 	}
 
 }

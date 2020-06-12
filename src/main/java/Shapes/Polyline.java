@@ -115,5 +115,8 @@ public class Polyline implements Shape, Serializable{
 		// TODO Автоматически созданная заглушка метода
 		return false;
 	}
+	public List<Point2D> getPoints() {
+		return coordinates;
+	}
 
 }

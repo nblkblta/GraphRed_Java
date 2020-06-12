@@ -11,8 +11,7 @@ public class Settings {
 	private static Settings me;
 
 	
-	private Settings() {
-		
+	private Settings() {	
 	}
 	
 	public static Settings getSettings() {

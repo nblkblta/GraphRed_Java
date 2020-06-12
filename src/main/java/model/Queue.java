@@ -17,7 +17,6 @@ public class Queue implements Serializable{
 	Queue(){
 		listOfShapes = new ArrayList<BaseShape>();
 		CurrColor=Color.black;
-		
 	}
 	
 	public void addShape(BaseShape shape) {
@@ -45,6 +44,14 @@ public class Queue implements Serializable{
 	
 	public void refresh() {
 		this.listOfShapes.clear();
+	}
+
+	public void removeLast() {
+		listOfShapes.remove(listOfShapes.size()-1);
+	}
+
+	public List<BaseShape> getShapes() {
+		return listOfShapes ;
 	}
 		
 }

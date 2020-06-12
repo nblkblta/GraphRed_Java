@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Shape;
 import java.awt.geom.Point2D;
+import java.util.List;
 
 public class PencilShape extends BaseShape{
 	
@@ -20,7 +21,7 @@ public class PencilShape extends BaseShape{
 	@Override
 	public void drawShape(Graphics g) {
 		g.setColor(shapeColor);
-		for (Point2D s: shape.coordinates) {
+		for (Point2D s: shape.getCoordinates()) {
 			g.drawRect((int)s.getX(), (int)s.getY(), 1, 1);
 		}
 	}
@@ -58,6 +59,23 @@ public class PencilShape extends BaseShape{
 	public void addCurrCoordinates(Point2D point) {
 		this.shape.addCurrCoordinates(point);
 		
+	}
+
+	@Override
+	public List<Point2D> getPoints() {
+		return shape.getCoordinates();
+	}
+
+	@Override
+	public String getType() {
+		return "Pencil";
+	}
+
+	@Override
+	public void setCoordinates(List<Point2D> points) {
+		for(int i = 0 ;i < points.size();i++) {
+			addCoordinates(points.get(i));
+		}	
 	}
 
 }

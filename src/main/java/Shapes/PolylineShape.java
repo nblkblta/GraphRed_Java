@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Shape;
 import java.awt.geom.Point2D;
+import java.util.List;
 
 
 public class PolylineShape extends BaseShape {
@@ -52,5 +53,21 @@ public class PolylineShape extends BaseShape {
 	public void addCurrCoordinates(Point2D point) {
 		this.shape.addCurrCoordinates(point);
 	}
+	@Override
+	public List<Point2D> getPoints() {
+		return shape.getPoints();
+	}
+	@Override
+	public String getType() {
+		return "Polyline";
+	}
+	@Override
+	public void setCoordinates(List<Point2D> points) {
+		for(int i = 0 ;i < points.size()-1;i++) {
+			addCoordinates(points.get(i));
+		}
+		addCurrCoordinates(points.get(points.size()-1));
+	}
+	
 	
 }

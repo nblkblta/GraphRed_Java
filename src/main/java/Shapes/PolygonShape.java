@@ -7,6 +7,8 @@ import java.awt.Polygon;
 import java.awt.Shape;
 
 import java.awt.geom.Point2D;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class PolygonShape extends BaseShape {
@@ -55,6 +57,26 @@ public class PolygonShape extends BaseShape {
 	@Override
 	public void addCurrCoordinates(Point2D point) {
 		
+	}
+	@Override
+	public List<Point2D> getPoints() {
+		int[] x = shape.xpoints;
+		int[] y = shape.ypoints;
+		List<Point2D> points = new ArrayList<Point2D>();
+		for(int i=0;i<shape.npoints;i++) {
+			points.add(new Point2D.Double(x[i],y[i]));
+		}
+		return points;
+	}
+	@Override
+	public String getType() {
+		return "Polygon";
+	}
+	@Override
+	public void setCoordinates(List<Point2D> points) {
+		for(int i = 0 ;i < points.size();i++) {
+			addCoordinates(points.get(i));
+		}	
 	}	
 
 }

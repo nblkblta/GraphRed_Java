@@ -18,25 +18,24 @@ import javax.imageio.ImageIO;
 import patterns.Observed;
 import patterns.Observer;
 import shapes.BaseShape;
+import shapes.EllipseShape;
+import shapes.PencilShape;
+import shapes.PolygonShape;
+import shapes.PolylineShape;
+import shapes.RectShape;
+import shapes.SaveShape;
+import shapes.SaveShapeQueue;
 
 public class Model implements Observed{
 	private List<Observer> listOfObservers;
-	private Queue query;
+	private Queue queue;
 	private BufferedImage buf;
 	private Graphics buffer;
 	private Settings settings;
 	private static Model me;
-	public Model(Settings settings){
-		query = new Queue();
-		listOfObservers = new ArrayList<Observer>();
-		this.settings=settings;
-		buf=new BufferedImage(this.settings.getDimension().width,this.settings.getDimension().height, BufferedImage.TYPE_INT_ARGB);
-		buffer=buf.getGraphics();
-		buffer.setColor(Color.white);
-		buffer.fillRect(0, this.settings.getPanelCount()*this.settings.getButtonSize(), this.settings.getDimension().width, this.settings.getDimension().height);
-	}
+	
 	private Model(){
-		query = new Queue();
+		queue = new Queue();
 		listOfObservers = new ArrayList<Observer>();
 		this.settings=Settings.getSettings();
 		buf=new BufferedImage(this.settings.getDimension().width,this.settings.getDimension().height, BufferedImage.TYPE_INT_ARGB);
@@ -53,41 +52,46 @@ public class Model implements Observed{
 	}
 	
 	public void refresh() {
-		this.query.refresh();
+		this.queue.refresh();
 		notifyObservers();
 	}
 	
 	public BaseShape getLast() {
-		return query.getLast();
+		return queue.getLast();
 	}
 	
 	public void addShape(BaseShape shape) {
-		query.addShape(shape);
+		/*if(queue.getLast()!=null){
+			if(queue.getLast().getShape()==null) {
+				queue.removeLast();
+			}
+		}*/
+		queue.addShape(shape);
 	}
 	
 	public void addCoordinates(Point2D point) {
 		if(point.getY()>settings.getButtonSize()*this.settings.getPanelCount()) {
-		query.getLast().addCoordinates(point);
+		queue.getLast().addCoordinates(point);
 		notifyObservers();
 		}
 	}
 	
 	public void addCurrCoordinates(Point2D point) {
 		if(point.getY()>settings.getButtonSize()*this.settings.getPanelCount()) {
-		query.getLast().addCurrCoordinates(point);
+		queue.getLast().addCurrCoordinates(point);
 		notifyObservers();
 		}
 	}
 	
 	public void setCurrColor(Color color) {
-		query.setCurrColor(color);
+		queue.setCurrColor(color);
 		notifyObservers();
 	}
 
 	public BufferedImage getBuf() {
 		buffer.setColor(Color.white);
 		buffer.fillRect(0, this.settings.getPanelCount()*settings.getButtonSize(), settings.getDimension().width, settings.getDimension().height);
-		query.printTo(buffer);
+		queue.printTo(buffer);
 		return buf;
 	}
 
@@ -114,16 +118,39 @@ public class Model implements Observed{
 	}
 
 	public void save() throws IOException {
-		 FileOutputStream outputStream = new FileOutputStream("save.ser");
-	     ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
-	     objectOutputStream.writeObject(query);
-	     objectOutputStream.close();
+		SaveShapeQueue shapes = new SaveShapeQueue();
+		for(BaseShape shape:queue.getShapes()) {
+			shapes.addShape(new SaveShape(shape));
+		}
+		FileOutputStream outputStream = new FileOutputStream("save.ser");
+	    ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
+	    objectOutputStream.writeObject(shapes);
+	    objectOutputStream.close();
 	}
 
 	public void load() throws IOException, ClassNotFoundException {
+		SaveShapeQueue shapes = new SaveShapeQueue();
 		FileInputStream fileInputStream = new FileInputStream("save.ser");
 	    try (ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
-			query = (Queue) objectInputStream.readObject();
+			shapes = (SaveShapeQueue) objectInputStream.readObject();
+			refresh();
+			for (SaveShape saveShape:shapes.getShapes()) {
+				setCurrColor(saveShape.getColor());
+				if(saveShape.getType().equals("Ellipse")) {
+					addShape(new EllipseShape());
+				}else if (saveShape.getType().equals("Rectangle")) {
+					addShape(new RectShape());
+				}else if (saveShape.getType().equals("Pencil")) {
+					addShape(new PencilShape());
+				}else if (saveShape.getType().equals("Polygon")) {
+					addShape(new PolygonShape());
+				}else if (saveShape.getType().equals("Polyline")) {
+					addShape(new PolylineShape());
+				}else throw new RuntimeException("problem");
+				if(saveShape.getPoints().size()!=0) {
+					getLast().setCoordinates(saveShape.getPoints());
+				}
+			}
 			notifyObservers();
 		}
 	    

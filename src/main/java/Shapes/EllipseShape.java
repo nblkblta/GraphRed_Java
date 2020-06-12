@@ -57,5 +57,18 @@ public class EllipseShape extends BaseShape {
 		elip.setFrameFromDiagonal(coordinates.get(0), coordinates.get(1));
 		shape=elip;
 	}
+	@Override
+	public List<Point2D> getPoints() {
+		return coordinates;
+	}
+	@Override
+	public String getType() {
+		return "Ellipse";
+	}
+	@Override
+	public void setCoordinates(List<Point2D> points) {
+		addCoordinates(points.get(0));
+		addCurrCoordinates(points.get(1));
+	}
 
 }
