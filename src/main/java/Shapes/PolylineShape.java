@@ -6,6 +6,8 @@ import java.awt.Shape;
 import java.awt.geom.Point2D;
 import java.util.List;
 
+import save.BaseShape;
+
 
 public class PolylineShape extends BaseShape {
 	

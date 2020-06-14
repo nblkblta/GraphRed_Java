@@ -4,27 +4,13 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.imageio.ImageIO;
-
-import patterns.Observed;
-import patterns.Observer;
-import shapes.BaseShape;
-import shapes.EllipseShape;
-import shapes.PencilShape;
-import shapes.PolygonShape;
-import shapes.PolylineShape;
-import shapes.RectShape;
-import shapes.SaveShape;
-import shapes.SaveShapeQueue;
+import patterns.*;
+import save.*;
+import shapes.*;
 
 public class Model implements Observed{
 	private List<Observer> listOfObservers;

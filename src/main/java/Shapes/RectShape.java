@@ -8,6 +8,8 @@ import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
 
+import save.BaseShape;
+
 public class RectShape extends BaseShape {
 
 	private List<Point2D> coordinates;
