@@ -46,10 +46,6 @@ public class PolygonShape extends BaseShape {
 		this.shape=(Polygon) shape;
 	}
 
-	@Override
-	public void addCoordinates(Point2D point) {
-		shape.addPoint((int)point.getX(), (int)point.getY());
-	}
 
 	@Override
 	public void addCurrCoordinates(Point2D point) {
@@ -72,8 +68,17 @@ public class PolygonShape extends BaseShape {
 	@Override
 	public void setCoordinates(List<Point2D> points) {
 		for(int i = 0 ;i < points.size();i++) {
-			addCoordinates(points.get(i));
+			addFirstCoordinates(points.get(i));
 		}	
+	}
+	@Override
+	public void addFirstCoordinates(Point2D point) {
+		shape.addPoint((int)point.getX(), (int)point.getY());
+		
+	}
+	@Override
+	public void addSecondCoordinates(Point2D point) {
+	
 	}	
 
 }

@@ -20,14 +20,14 @@ public class CanvasMouseListener implements MouseListener {
 	@Override
 	public void mousePressed(MouseEvent event) {
 			if(model.getLast()!=null) {
-				model.addCoordinates(event.getPoint());
+				model.addFirstCoordinates(event.getPoint());
 				}
 	}
 	@Override
 	public void mouseReleased(MouseEvent event) {
 		
 			if(model.getLast()!=null) {
-				model.addCoordinates(event.getPoint());
+				model.addSecondCoordinates(event.getPoint());
 				}
 	}
 

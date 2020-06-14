@@ -24,8 +24,7 @@ public class PencilShape extends BaseShape{
 
 	@Override
 	public Color getColor() {
-		// TODO Auto-generated method stub
-		return null;
+		return shapeColor;
 	}
 
 	@Override
@@ -46,9 +45,12 @@ public class PencilShape extends BaseShape{
 	}
 
 	@Override
-	public void addCoordinates(Point2D point) {
-		this.shape.addCurrCoordinates(point);
-		
+	public void addFirstCoordinates(Point2D point) {
+		this.shape.addCurrCoordinates(point);	
+	}
+	
+	@Override
+	public void addSecondCoordinates(Point2D point) {
 	}
 
 	@Override
@@ -70,7 +72,7 @@ public class PencilShape extends BaseShape{
 	@Override
 	public void setCoordinates(List<Point2D> points) {
 		for(int i = 0 ;i < points.size();i++) {
-			addCoordinates(points.get(i));
+			addFirstCoordinates(points.get(i));
 		}	
 	}
 

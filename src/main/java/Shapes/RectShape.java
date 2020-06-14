@@ -15,6 +15,8 @@ public class RectShape extends BaseShape {
 	private Shape shape=null;
 	public RectShape(){
 		this.coordinates = new ArrayList<Point2D>();
+		coordinates.add(new Point2D.Double(0,0));
+		coordinates.add(new Point2D.Double(0,0));
 	}
 	
 	@Override
@@ -46,13 +48,18 @@ public class RectShape extends BaseShape {
 	}
 
 	@Override
-	public void addCoordinates(Point2D point) {
-		coordinates.add(0, point);
+	public void addFirstCoordinates(Point2D point) {
+		coordinates.set(0, point);
+	}
+	
+	@Override
+	public void addSecondCoordinates(Point2D point) {
+		coordinates.set(1, point);
 	}
 
 	@Override
 	public void addCurrCoordinates(Point2D point) {
-		coordinates.add(1, point);
+		coordinates.set(1, point);
 		Rectangle rect = new Rectangle();
 		rect.setFrameFromDiagonal(coordinates.get(0), coordinates.get(1));
 		shape=rect;
@@ -69,7 +76,7 @@ public class RectShape extends BaseShape {
 
 	@Override
 	public void setCoordinates(List<Point2D> points) {
-		addCoordinates(points.get(0));
+		addFirstCoordinates(points.get(0));
 		addCurrCoordinates(points.get(1));
 	}
 

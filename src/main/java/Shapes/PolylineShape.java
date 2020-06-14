@@ -22,8 +22,7 @@ public class PolylineShape extends BaseShape {
 	
 	@Override
 	public Color getColor() {
-		// TODO Автоматически созданная заглушка метода
-		return null;
+		return shapeColor;
 	}
 
 	@Override
@@ -42,7 +41,12 @@ public class PolylineShape extends BaseShape {
 	}
 
 	@Override
-	public void addCoordinates(Point2D point) {
+	public void addFirstCoordinates(Point2D point) {
+		this.shape.addCoordinates(point);
+	}
+	
+	@Override
+	public void addSecondCoordinates(Point2D point) {
 		this.shape.addCoordinates(point);
 	}
 
@@ -61,7 +65,7 @@ public class PolylineShape extends BaseShape {
 	@Override
 	public void setCoordinates(List<Point2D> points) {
 		for(int i = 0 ;i < points.size()-1;i++) {
-			addCoordinates(points.get(i));
+			addFirstCoordinates(points.get(i));
 		}
 		addCurrCoordinates(points.get(points.size()-1));
 	}

@@ -13,7 +13,8 @@ public abstract class BaseShape{
 	abstract public void setColor(Color color);
 	abstract public Shape getShape();
 	abstract public void setShape(Shape shape);
-	abstract public void addCoordinates(Point2D point);
+	abstract public void addFirstCoordinates(Point2D point);
+	abstract public void addSecondCoordinates(Point2D point);
 	abstract public void addCurrCoordinates(Point2D point);
 	abstract public List<Point2D> getPoints();
 	abstract public String getType();

@@ -69,9 +69,15 @@ public class Model implements Observed{
 		queue.addShape(shape);
 	}
 	
-	public void addCoordinates(Point2D point) {
+	public void addFirstCoordinates(Point2D point) {
 		if(point.getY()>settings.getButtonSize()*this.settings.getPanelCount()) {
-		queue.getLast().addCoordinates(point);
+		queue.getLast().addFirstCoordinates(point);
+		notifyObservers();
+		}
+	}
+	public void addSecondCoordinates(Point2D point) {
+		if(point.getY()>settings.getButtonSize()*this.settings.getPanelCount()) {
+		queue.getLast().addSecondCoordinates(point);
 		notifyObservers();
 		}
 	}
