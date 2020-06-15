@@ -32,10 +32,7 @@ public class PolylineShape extends BaseShape {
 		this.shapeColor=color;
 	}
 
-	@Override
-	public Shape getShape() {
-		return this.shape;
-	}
+	
 
 	@Override
 	public void setShape(Shape shape) {
@@ -72,5 +69,11 @@ public class PolylineShape extends BaseShape {
 		addCurrCoordinates(points.get(points.size()-1));
 	}
 	
-	
+	@Override
+	public boolean isNull() {
+		if (this.shape==null) {
+			return true;
+		}
+		return false;
+	}
 }

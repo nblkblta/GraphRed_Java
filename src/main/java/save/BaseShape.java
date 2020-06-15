@@ -11,7 +11,6 @@ public abstract class BaseShape{
 	abstract public void drawShape(Graphics g);
 	abstract public Color getColor();
 	abstract public void setColor(Color color);
-	abstract public Shape getShape();
 	abstract public void setShape(Shape shape);
 	abstract public void addFirstCoordinates(Point2D point);
 	abstract public void addSecondCoordinates(Point2D point);
@@ -19,4 +18,5 @@ public abstract class BaseShape{
 	abstract public List<Point2D> getPoints();
 	abstract public String getType();
 	abstract public void setCoordinates(List<Point2D> points);
+	abstract public boolean isNull();
 }

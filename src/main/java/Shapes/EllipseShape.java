@@ -36,10 +36,7 @@ public class EllipseShape extends BaseShape {
 		shapeColor = color;
 	}
 
-	@Override
-	public Shape getShape() {
-		return shape;
-	}
+	
 
 	@Override
 	public void setShape(Shape shape) {
@@ -76,6 +73,13 @@ public class EllipseShape extends BaseShape {
 	public void setCoordinates(List<Point2D> points) {
 		addFirstCoordinates(points.get(0));
 		addCurrCoordinates(points.get(1));
+	}
+	@Override
+	public boolean isNull() {
+		if (this.shape==null) {
+			return true;
+		}
+		return false;
 	}
 
 }

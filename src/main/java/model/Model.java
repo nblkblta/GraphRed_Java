@@ -47,11 +47,6 @@ public class Model implements Observed{
 	}
 	
 	public void addShape(BaseShape shape) {
-		/*if(queue.getLast()!=null){
-			if(queue.getLast().getShape()==null) {
-				queue.removeLast();
-			}
-		}*/
 		queue.addShape(shape);
 	}
 	

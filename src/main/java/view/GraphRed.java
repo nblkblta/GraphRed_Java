@@ -14,6 +14,8 @@ public class GraphRed extends JFrame implements Observer{
 		this.add(new ButtonPanel());
 		this.add(new ColorButtonPanel());
 		this.add(new Canvas());
+		setExtendedState(MAXIMIZED_BOTH);
+
 		this.setVisible(true);
 	}
 	@Override

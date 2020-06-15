@@ -26,7 +26,7 @@ public class Queue implements Serializable{
 	
 	public void printTo(Graphics buffer) {
 		for (BaseShape shape: listOfShapes) {
-			if(shape.getShape()!=null) {
+			if(!shape.isNull()) {
 			shape.drawShape(buffer);
 			}
 		}	

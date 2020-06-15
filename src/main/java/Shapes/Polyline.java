@@ -9,7 +9,7 @@ import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Polyline implements Shape{
+public class Polyline{
 
 	private List<Point2D> coordinates;
 	
@@ -49,67 +49,6 @@ public class Polyline implements Shape{
 		this.coordinates.set(0, point);
 	}
 	
-	
-	
-	@Override
-	public boolean contains(Point2D p) {
-		// TODO Автоматически созданная заглушка метода
-		return false;
-	}
-
-	@Override
-	public boolean contains(Rectangle2D r) {
-		// TODO Автоматически созданная заглушка метода
-		return false;
-	}
-
-	@Override
-	public boolean contains(double x, double y) {
-		// TODO Автоматически созданная заглушка метода
-		return false;
-	}
-
-	@Override
-	public boolean contains(double x, double y, double w, double h) {
-		// TODO Автоматически созданная заглушка метода
-		return false;
-	}
-
-	@Override
-	public Rectangle getBounds() {
-		// TODO Автоматически созданная заглушка метода
-		return null;
-	}
-
-	@Override
-	public Rectangle2D getBounds2D() {
-		// TODO Автоматически созданная заглушка метода
-		return null;
-	}
-
-	@Override
-	public PathIterator getPathIterator(AffineTransform at) {
-		// TODO Автоматически созданная заглушка метода
-		return null;
-	}
-
-	@Override
-	public PathIterator getPathIterator(AffineTransform at, double flatness) {
-		// TODO Автоматически созданная заглушка метода
-		return null;
-	}
-
-	@Override
-	public boolean intersects(Rectangle2D r) {
-		// TODO Автоматически созданная заглушка метода
-		return false;
-	}
-
-	@Override
-	public boolean intersects(double x, double y, double w, double h) {
-		// TODO Автоматически созданная заглушка метода
-		return false;
-	}
 	public List<Point2D> getPoints() {
 		return coordinates;
 	}

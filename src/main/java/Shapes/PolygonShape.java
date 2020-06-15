@@ -38,10 +38,7 @@ public class PolygonShape extends BaseShape {
 		
 	}
 
-	@Override
-	public Shape getShape() {
-		return this.shape;
-	}
+	
 
 	@Override
 	public void setShape(Shape shape) {
@@ -82,5 +79,12 @@ public class PolygonShape extends BaseShape {
 	public void addSecondCoordinates(Point2D point) {
 	
 	}	
+	@Override
+	public boolean isNull() {
+		if (this.shape==null) {
+			return true;
+		}
+		return false;
+	}
 
 }

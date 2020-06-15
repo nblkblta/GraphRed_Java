@@ -35,10 +35,7 @@ public class PencilShape extends BaseShape{
 		
 	}
 
-	@Override
-	public Shape getShape() {
-		return this.shape;
-	}
+	
 
 	@Override
 	public void setShape(Shape shape) {
@@ -76,6 +73,13 @@ public class PencilShape extends BaseShape{
 		for(int i = 0 ;i < points.size();i++) {
 			addFirstCoordinates(points.get(i));
 		}	
+	}
+	@Override
+	public boolean isNull() {
+		if (this.shape==null) {
+			return true;
+		}
+		return false;
 	}
 
 }

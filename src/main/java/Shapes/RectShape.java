@@ -40,11 +40,6 @@ public class RectShape extends BaseShape {
 	}
 
 	@Override
-	public Shape getShape() {
-		return shape;
-	}
-
-	@Override
 	public void setShape(Shape shape) {
 		this.shape = (Rectangle)shape;
 	}
@@ -80,6 +75,13 @@ public class RectShape extends BaseShape {
 	public void setCoordinates(List<Point2D> points) {
 		addFirstCoordinates(points.get(0));
 		addCurrCoordinates(points.get(1));
+	}
+	@Override
+	public boolean isNull() {
+		if (this.shape==null) {
+			return true;
+		}
+		return false;
 	}
 
 }
