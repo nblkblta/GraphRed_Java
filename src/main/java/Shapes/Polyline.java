@@ -1,11 +1,8 @@
 package shapes;
 
-import java.awt.Rectangle;
-import java.awt.Shape;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.PathIterator;
+
 import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
+import java.awt.geom.Point2D.Double;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +12,7 @@ public class Polyline{
 	
 	Polyline(){
 		this.coordinates = new ArrayList<Point2D>();
+		this.coordinates.add(new Point2D.Double(0,0));
 	}
 	public int[] getX() {
 		int[] m = new int [this.coordinates.size()];

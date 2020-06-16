@@ -30,6 +30,8 @@ public class ButtonListener implements ActionListener{
 			Model.getModel().addShape(new PolygonShape());
 		}else if (action.equals("Pencil")) {
 			Model.getModel().addShape(new PencilShape());
+		}else if (action.equals("Refresh")) {
+			Model.getModel().refresh();
 		}else if (action.equals("Save")) {
 			try {
 				Model.getModel().save();

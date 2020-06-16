@@ -11,5 +11,4 @@ public class BaseButton extends JButton{
 		super(s);
 		this.addActionListener(new ButtonListener(s));
 	}
-
 }

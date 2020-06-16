@@ -20,11 +20,11 @@ public class PolygonShape extends BaseShape {
 	public PolygonShape(){
 		this.shape=new Polygon();
 	}
+	
 	@Override
 	public void drawShape(Graphics g) {
 		g.setColor(shapeColor);
-		g.drawPolygon(shape);
-		
+		g.drawPolygon(shape);	
 	}
 
 	@Override
@@ -34,22 +34,18 @@ public class PolygonShape extends BaseShape {
 
 	@Override
 	public void setColor(Color color) {
-		this.shapeColor=color;
-		
+		this.shapeColor=color;	
 	}
-
-	
 
 	@Override
 	public void setShape(Shape shape) {
 		this.shape=(Polygon) shape;
 	}
 
-
 	@Override
-	public void addCurrCoordinates(Point2D point) {
-		
+	public void addCurrCoordinates(Point2D point) {	
 	}
+	
 	@Override
 	public List<Point2D> getPoints() {
 		int[] x = shape.xpoints;
@@ -73,7 +69,6 @@ public class PolygonShape extends BaseShape {
 	@Override
 	public void addFirstCoordinates(Point2D point) {
 		shape.addPoint((int)point.getX(), (int)point.getY());
-		
 	}
 	@Override
 	public void addSecondCoordinates(Point2D point) {
